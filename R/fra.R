@@ -1,7 +1,7 @@
 if (getRversion() >= "2.15.1") utils::globalVariables(c('t1',
- 'r1',
- 't2',
- 'r2'))
+                                                        'r1',
+                                                        't2',
+                                                        'r2'))
 
 fra <-
 function(){
@@ -48,7 +48,7 @@ function(){
   rp.textentry(panel=my.panel,variable=t2,title="Months2:",action=my.redraw,initval=6)
   rp.textentry(panel=my.panel,variable=r2,title="Rate2:      ",action=my.redraw,initval=0.12)
   rp.radiogroup(panel = my.panel, variable= frequency,
-                values = c("Continuous", "Loan period"),
+                vals = c("Continuous", "Loan period"),
                 action = my.redraw, title = "Frequency of spot rates")
   rp.tkrplot(panel = my.panel, pos="bottom",name = my.tkrplot, plotfun = my.draw)
   #rp.do(my.panel, my.draw)

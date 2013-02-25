@@ -1,8 +1,8 @@
 if (getRversion() >= "2.15.1") utils::globalVariables(c('Notional',
- 'f12',
- 'fixed',
- 't1',
- 't2'))
+                                                        'f12',
+                                                        'fixed',
+                                                        't1',
+                                                        't2'))
 
 fravalue <-
 function(){

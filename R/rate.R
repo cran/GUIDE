@@ -1,7 +1,6 @@
 if (getRversion() >= "2.15.1") utils::globalVariables(c('fromfrequency',
- 'tofrequency',
- 'fromrate'))
-
+                                                        'tofrequency',
+                                                        'fromrate'))
 rate <-
 function(){
   my.draw <- function(panel) {
@@ -75,10 +74,10 @@ function(){
   
   my.panel <- rp.control(title = "Rate Converter")
   rp.radiogroup(panel = my.panel, variable= fromfrequency,
-                values = c("continuous", "quarterly", "semi-annual", "annual"),
+                vals = c("continuous", "quarterly", "semi-annual", "annual"),
                 action = my.redraw, title = "Given frequency")
   rp.radiogroup(panel = my.panel, variable= tofrequency,
-                values = c("continuous", "quarterly", "semi-annual", "annual"),
+                vals = c("continuous", "quarterly", "semi-annual", "annual"),
                 action = my.redraw, title = "Required frequency")
   rp.textentry(panel=my.panel,variable=fromrate,title="Given rate: ",action=my.redraw,initval=0.05)
   rp.tkrplot(panel = my.panel, name = my.tkrplot, plotfun = my.draw)

@@ -1,5 +1,5 @@
 if (getRversion() >= "2.15.1") utils::globalVariables(c( 'Instalment',
-'r'))
+                                                         'r'))
 
 pvann <-
 function(){
@@ -47,7 +47,7 @@ function(){
   rp.textentry(panel = my.panel, variable= t,
                labels = "Time:             ", action = my.redraw, initval="1")
   rp.radiogroup(panel = my.panel, variable= frequency,
-                values = c("monthly", "quarterly", "semi-annual", "annual"),
+                vals = c("monthly", "quarterly", "semi-annual", "annual"),
                 action = my.redraw, title = "Payment frequency")
   rp.tkrplot(panel = my.panel, name = my.tkrplot, plotfun = my.draw)
   #rp.do(my.panel, my.draw)

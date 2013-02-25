@@ -1,9 +1,10 @@
 if (getRversion() >= "2.15.1") utils::globalVariables(c('weight1',
- 'mu1',
- 'sigma1',
- 'mu2',
- 'sigma2',
- 'plottype'))
+                                                        'mu1',
+                                                        'sigma1',
+                                                        'mu2',
+                                                        'sigma2',
+                                                        'plottype'))
+
 
 varbehavior <-
 function(){
@@ -31,7 +32,7 @@ function(){
 #       cov = matrix(c(sigma1^2,cov12,cov12,sigma2^2),nrow=2,byrow=F)
 #     portrisk = t(weights) %*% (cov %*% weights)
       portrisk = weights[1,1]^2*sigma1^2 + weights[2,1]^2*sigma2^2 + 2*cov12*weights[1,1]*weights[2,1]
-      portvariable= (qnorm(conflvl)*portrisk*sqrt(horizon1/12) - portreturn)
+      portvar= (qnorm(conflvl)*portrisk*sqrt(horizon1/12) - portreturn)
       return(portvar)
     }
     
@@ -46,7 +47,7 @@ function(){
 #       cov = matrix(c(sigma1^2,cov12,cov12,sigma2^2),nrow=2,byrow=F)
 #       portrisk = t(weights) %*% (cov %*% weights)
       portrisk = weights[1,1]^2*sigma1^2 + weights[2,1]^2*sigma2^2 + 2*cov12*weights[1,1]*weights[2,1]
-      portvariable= (qnorm(conflvl)*portrisk*sqrt(horizon1/12) - portreturn)
+      portvar= (qnorm(conflvl)*portrisk*sqrt(horizon1/12) - portreturn)
       return(portvar)
     }
     
@@ -114,6 +115,6 @@ function(){
    
  
   rp.radiogroup(panel=my.panel,variable=plottype,title="Plot Type",
-      values=c("Confidence level-Correlation","Confidence level-Horizon"),action=my.draw1)
+      vals=c("Confidence level-Correlation","Confidence level-Horizon"),action=my.draw1)
   rp.do(my.panel, my.draw1)
 }

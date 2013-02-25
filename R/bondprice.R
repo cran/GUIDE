@@ -83,10 +83,10 @@ function(){
   #   rp.slider(my.panel,discrate,1,20,my.redraw, title = "Discount Rate")
   rp.doublebutton(my.panel,variable=maturity,step=1,title="Maturity(Yrs)",initval=10,range=c(1,25),showvalue=TRUE,action=my.redraw)
   rp.radiogroup(panel = my.panel, variable= frequency,
-                values = c("quarterly", "semi-annual", "annual"),
+                vals = c("quarterly", "semi-annual", "annual"),
                 action = my.redraw, title = "Coupon payments")
   rp.radiogroup(panel = my.panel, variable= ratefreq,
-                values = c("continuous comp", "same as coupon freq","annual comp"),
+                vals = c("continuous comp", "same as coupon freq","annual comp"),
                 action = my.redraw, title = "Frequency of discount rate")
   rp.tkrplot(panel=my.panel , name=tkrp, plotfun=my.draw)
   

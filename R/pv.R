@@ -1,6 +1,5 @@
 if (getRversion() >= "2.15.1") utils::globalVariables(c( 'FV',
                                                          'r'))
-
 pv <-
 function(){
   my.draw <- function(panel) {
@@ -44,7 +43,7 @@ function(){
   rp.textentry(panel = my.panel, variable= t,
                labels = "Time:             ", action = my.redraw, initval="1")
   rp.radiogroup(panel = my.panel, variable= frequency,
-                values = c("continuous", "quarterly", "semi-annual", "annual"),
+                vals = c("continuous", "quarterly", "semi-annual", "annual"),
                 action = my.redraw, title = "Compounding frequency")
   rp.tkrplot(panel = my.panel, name = my.tkrplot, plotfun = my.draw)
   #rp.do(my.panel, my.draw)

@@ -58,7 +58,7 @@ function(){
   rp.slider(panel, discrate, 1,30,my.redraw, title = "Discount Rate")
   rp.slider(panel,couprate,1,30,my.redraw, title = "Coupon Rate")
   rp.radiogroup(panel = panel, variable= frequency,
-                values = c("quarterly", "semi-annual", "annual"),
+                vals = c("quarterly", "semi-annual", "annual"),
                 action = my.redraw, title = "Coupon frequency")
   #rp.do(my.panel, my.draw)
 }

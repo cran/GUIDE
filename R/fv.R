@@ -37,13 +37,13 @@ function(){
   
   my.panel <- rp.control(title = "Future Value")
   rp.textentry(panel = my.panel, variable= FV,
-               labels = "Present Value: ", action = my.redraw, initval="100")
+               labels = "Future Value: ", action = my.redraw, initval="100")
   rp.textentry(panel = my.panel, variable= r,
                labels = "Rate:              ", action = my.redraw, initval="0.10")
   rp.textentry(panel = my.panel, variable= t,
                labels = "Time:             ", action = my.redraw, initval="1")
   rp.radiogroup(panel = my.panel, variable= frequency,
-                values = c("continuous", "quarterly", "semi-annual", "annual"),
+                vals = c("continuous", "quarterly", "semi-annual", "annual"),
                 action = my.redraw, title = "Compounding frequency")
   rp.tkrplot(panel = my.panel, name = my.tkrplot, plotfun = my.draw)
   #rp.do(my.panel, my.draw)

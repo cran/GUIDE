@@ -132,11 +132,11 @@ function(){
   my.panel <- rp.control(title = "CRR Binomial Tree")
   
   rp.radiogroup(panel = my.panel, variable= opttype,
-                values = c("Call", "Put"), 
+                vals = c("Call", "Put"), 
                 action = my.draw, title = "Type of Option")
   
   rp.radiogroup(panel = my.panel, variable= exercisetype,
-                values = c("European", "American"), 
+                vals = c("European", "American"), 
                 action = my.draw, title = "Exercise style")
   
   rp.textentry(panel=my.panel,variable=Stock,action=my.draw,title="Stock price     ",initval=100)
@@ -148,7 +148,7 @@ function(){
   rp.doublebutton(panel = my.panel, showvalue=TRUE, variable= nsteps, step = 1, range = c(1, 5),initval=3,
                   title = "No. of Steps", action = my.draw)
   rp.radiogroup(panel = my.panel, variable= plot,
-                values = c("Stock Tree", "Option Tree"), 
+                vals = c("Stock Tree", "Option Tree"), 
                 action = my.draw, title = "Plot Type")
   rp.do(my.panel, my.draw)
 }

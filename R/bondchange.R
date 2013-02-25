@@ -61,7 +61,7 @@ function(){
                labels = "Convexity:         ", action = my.redraw, initval="8")
   rp.doublebutton(my.panel,variable=yldchange,step=1,title="Change in Yield (bp)",initval=1,range=c(1,30),showvalue=TRUE,action=my.redraw)
   rp.radiogroup(panel = my.panel, variable= approx,
-                values = c("Duration only", "Duration & Convexity"),
+                vals = c("Duration only", "Duration & Convexity"),
                 action = my.redraw, title = "Formula/Approximation")
   rp.tkrplot(panel=my.panel , name=tkrp, plotfun=my.draw)
   

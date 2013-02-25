@@ -1,8 +1,8 @@
 if (getRversion() >= "2.15.1") utils::globalVariables(c('S',
- 'r',
- 'incometype',
- 'income',
- 'incometime'))
+                                                        'r',
+                                                        'incometype',
+                                                        'income',
+                                                        'incometime'))
 
 futuresstock <-
 function(){
@@ -20,8 +20,8 @@ function(){
       price =   exp((r-income)*t)*S
     }
     else{
-      income <- as.numeric(strsplit(panel$income,",")[[1]])
-      incometime <- as.numeric(strsplit(panel$incometime,",")[[1]])
+      income <- as.numeric(strsplit(as.character(panel$income),",")[[1]])
+      incometime <- as.numeric(strsplit(as.character(panel$incometime),",")[[1]])
       price = (S-sum(income*exp(-r*incometime)))*exp(r*t)
     }
     
@@ -38,13 +38,13 @@ function(){
   }
   
   my.panel <- rp.control(title = "Stock Futures")
-  rp.textentry(panel=my.panel,variable=S,title="Spot:               ",action=my.redraw,initval=100)
-  rp.textentry(panel=my.panel,variable=r,title="Risk free:        ",action=my.redraw,initval=0.05)
-  rp.textentry(panel=my.panel,variable=t,title="Maturity:        ",action=my.redraw,initval=0.5)
-  rp.radiogroup(panel = my.panel, variable= incometype, values = c("Yield","Cash"), 
-                action = my.redraw, title = "Type of Income")
+  rp.textentry(panel=my.panel,variable=S,title="Spot:                       ",action=my.redraw,initval=100)
+  rp.textentry(panel=my.panel,variable=r,title="Risk free:                ",action=my.redraw,initval=0.05)
+  rp.textentry(panel=my.panel,variable=t,title="Maturity:                ",action=my.redraw,initval=0.5)
   rp.textentry(panel=my.panel,variable=income,title="Dividend(s):            ",action=my.redraw,initval=0)
   rp.textentry(panel=my.panel,variable=incometime,title="Dividend times(s): ",action=my.redraw,initval=0)
+  rp.radiogroup(panel = my.panel, variable= incometype, vals = c("Yield","Cash"), 
+                action = my.redraw, title = "Type of Income")
   rp.tkrplot(panel = my.panel, name = my.tkrplot, plotfun = my.draw)
   
   #rp.do(my.panel, my.draw)

@@ -98,10 +98,10 @@ function(){
   rp.textentry(panel=my.panel,variable=div,title="Div yield:     ",action=my.redraw,initval=0.0)
   
   rp.radiogroup(panel = my.panel, variable= opttype,
-                values = c("Call", "Put"), 
+                vals = c("Call", "Put"), 
                 action = my.redraw, title = "Type of Option")
   rp.radiogroup(panel = my.panel, variable= greek,
-                values = c("Delta", "Gamma","Vega","Theta","Rho"), 
+                vals = c("Delta", "Gamma","Vega","Theta","Rho"), 
                 action = my.redraw, title = "Greek")
   rp.doublebutton(panel = my.panel, showvalue=TRUE,variable= sigma, 
                   initval=0.25,step = 0.05, range = c(0.00, 0.50),

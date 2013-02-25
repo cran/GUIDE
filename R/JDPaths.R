@@ -1,6 +1,6 @@
 if (getRversion() >= "2.15.1") utils::globalVariables(c("nu","delta","lambda"))
-                                                        
-  
+
+
 JDPaths <-
 function(){
   #   http://www.thetaris.com/wiki/Jump_Diffusion

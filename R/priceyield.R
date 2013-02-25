@@ -1,7 +1,7 @@
 if (getRversion() >= "2.15.1") utils::globalVariables(c( 'tkrp',
- 'tkrp',
- 'couprate',
- 'maturity'))
+                                                         'tkrp',
+                                                         'couprate',
+                                                         'maturity'))
 
 priceyield <-
 function(){
@@ -64,7 +64,7 @@ function(){
   rp.slider(panel,couprate,1,20,my.redraw, title = "Coupon Rate")
   rp.doublebutton(panel,variable=maturity,step=3,title="Maturity",initval=10,range=c(1,22),action=my.redraw)
   rp.radiogroup(panel = panel, variable= frequency,
-                values = c("quarterly", "semi-annual", "annual"),
+                vals = c("quarterly", "semi-annual", "annual"),
                 action = my.redraw, title = "Coupon frequency")
   
   

@@ -1,9 +1,9 @@
 if (getRversion() >= "2.15.1") utils::globalVariables(c('S',
-'r',
-'storagetype',
-'storage',
-'storagetime',
-'convenience'))
+                                                        'r',
+                                                        'storagetype',
+                                                        'storage',
+                                                        'storagetime',
+                                                        'convenience'))
 
 futurescommodity <-
 function(){
@@ -21,8 +21,8 @@ function(){
       price <-   (exp(r+storage-convenience)*t)*S
     }
     else {
-      storage <- as.numeric(strsplit(panel$storage,",")[[1]])
-      storagetime <- as.numeric(strsplit(panel$storagetime,",")[[1]])
+      storage <- as.numeric(strsplit(as.character(panel$storage),",")[[1]])
+      storagetime <- as.numeric(strsplit(as.character(panel$storagetime),",")[[1]])
       price = (S+sum(storage*exp(-r*storagetime)))*(exp(r-convenience)*t)
     }
     
@@ -39,14 +39,14 @@ function(){
   }
   
   my.panel <- rp.control(title = "Commodity Futures")
-  rp.textentry(panel=my.panel,variable=S,title="Spot:               ",action=my.redraw,initval=100)
-  rp.textentry(panel=my.panel,variable=r,title="Risk free:        ",action=my.redraw,initval=0.05)
-  rp.textentry(panel=my.panel,variable=t,title="Maturity:        ",action=my.redraw,initval=0.5)
-  rp.radiogroup(panel = my.panel, variable= storagetype, values = c("Yield","Cash"),
-                initval="Yield",action = my.redraw, title = "Type of Storage Cost")
+  rp.textentry(panel=my.panel,variable=S,title="Spot:                           ",action=my.redraw,initval=100)
+  rp.textentry(panel=my.panel,variable=r,title="Risk free:                    ",action=my.redraw,initval=0.05)
+  rp.textentry(panel=my.panel,variable=t,title="Maturity:                    ",action=my.redraw,initval=0.5)
+  rp.textentry(panel=my.panel,variable=convenience,title="Convenience yield:    ",action=my.redraw,initval=0)
   rp.textentry(panel=my.panel,variable=storage,title="Storage Cost(s):          ",action=my.redraw,initval=0)
   rp.textentry(panel=my.panel,variable=storagetime,title="Storage Cost Time(s):",action=my.redraw,initval=0)
-  rp.textentry(panel=my.panel,variable=convenience,title="Convenience yield:    ",action=my.redraw,initval=0)
+  rp.radiogroup(panel = my.panel, variable= storagetype, vals = c("Yield","Cash"),
+                initval="Yield",action = my.redraw, title = "Type of Storage Cost")
   rp.tkrplot(panel = my.panel, name = my.tkrplot, plotfun = my.draw)
   
   #rp.do(my.panel, my.draw)

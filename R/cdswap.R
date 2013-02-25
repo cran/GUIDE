@@ -69,7 +69,7 @@ function(){
   rp.textentry(panel=my.panel,variable=t,title="Maturity:        ",action=my.redraw,initval=5)
   rp.textentry(panel=my.panel,variable=pd,title="Prob. Default:",action=my.redraw,initval=0.02)
   rp.radiogroup(panel=my.panel,variable=defaulttimes, title="Default Assumption", 
-                values=c("End of Q1", "End of half year","End of Q3", "End of Year"),action=my.redraw)
+                vals=c("End of Q1", "End of half year","End of Q3", "End of Year"),action=my.redraw)
   rp.doublebutton(panel=my.panel,variable=recovery,step=0.05,range=c(0,1),initval=0.4,action=my.redraw,showvalue=T)
   #   rp.slider(panel=my.panel,variable=recovery,from=0,to=1,initval=0.4,
   #             resolution=.05,showvalue=TRUE,action=my.redraw,title="Recovery rate")

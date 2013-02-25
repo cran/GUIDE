@@ -46,7 +46,7 @@ function(){
   rp.textentry(panel=my.panel,variable=t,title="Maturity:     ",action=my.redraw,initval=0.5)
   rp.textentry(panel=my.panel,variable=sigma,title="Sigma:         ",action=my.redraw,initval=0.30)
   rp.textentry(panel=my.panel,variable=div,title="Div yield:     ",action=my.redraw,initval=0.0)
-  rp.radiogroup(panel = my.panel, variable= opttype, values = c("Call", "Put"), 
+  rp.radiogroup(panel = my.panel, variable= opttype, vals = c("Call", "Put"), 
                 action = my.redraw, title = "Type of Option",initval="Call")
   #   rp.button(panel=my.panel,title="calculate", action=my.redraw)
   rp.tkrplot(panel = my.panel, name = my.tkrplot, plotfun = my.draw)

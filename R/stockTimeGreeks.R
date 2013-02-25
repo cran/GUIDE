@@ -1,6 +1,5 @@
 if (getRversion() >= "2.15.1") utils::globalVariables(c( 'opttype',
- 'greek'))
-
+                                                         'greek'))
 stockTimeGreeks <-
 function(){
   strike = 100 # lets keep this fixed
@@ -121,10 +120,10 @@ function(){
   my.panel <- rp.control(title = "stockprice-time-Delta", rf = 0.04, sigma = 0.20,size=c(500,400))
   
   rp.radiogroup(panel = my.panel, variable= opttype,
-                values = c("Call", "Put"), 
+                vals = c("Call", "Put"), 
                 action = my.draw, title = "Type of Option")
   rp.radiogroup(panel = my.panel, variable= greek,
-                values = c("Delta", "Gamma","Vega","Theta","Rho"), 
+                vals = c("Delta", "Gamma","Vega","Theta","Rho"), 
                 action = my.draw, title = "Greek")
   rp.doublebutton(panel = my.panel, variable= sigma, step = 0.05, range = c(0.00, 0.50),
                   title = "sigma",  action = my.draw)

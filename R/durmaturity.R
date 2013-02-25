@@ -1,8 +1,8 @@
 if (getRversion() >= "2.15.1") utils::globalVariables(c( 'tkrp',
-'couprate',
-'discrate'))
+                                                         'couprate',
+                                                         'discrate'))
 
- durmaturity <-
+durmaturity <-
 function(){
   
   

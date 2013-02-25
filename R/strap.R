@@ -1,8 +1,8 @@
 if (getRversion() >= "2.15.1") utils::globalVariables(c('longcalls',
-'longput',
-'profit',
-'tkrp',
-'tkrp'))
+                                                        'longput',
+                                                        'profit',
+                                                        'tkrp',
+                                                        'tkrp'))
 
 strap <-
 function(){

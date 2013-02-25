@@ -1,7 +1,7 @@
 if (getRversion() >= "2.15.1") utils::globalVariables(c('tkrp',
- 'longput',
- 'longcall',
- 'profit'))
+                                                        'longput',
+                                                        'longcall',
+                                                        'profit'))
 
 straddle <-
 function(){

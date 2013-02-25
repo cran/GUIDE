@@ -82,7 +82,7 @@ function(){
   rp.textentry(panel=my.panel,variable=SpotRate,title="Spot Exchange rate:           ",action=my.redraw,initval=1.5)
   rp.textentry(panel=my.panel,variable=nperiods,title="Number of Periods:            ",action=my.redraw,initval=3)
   rp.radiogroup(panel = my.panel, variable= settlement,
-                values = c("quarterly", "semi-annual", "annual"),
+                vals = c("quarterly", "semi-annual", "annual"),
                 action = my.redraw, title = "Settlement frequency")
   rp.tkrplot(panel = my.panel, pos="bottom",name = my.tkrplot, plotfun = my.draw)
   #rp.do(my.panel, my.draw)

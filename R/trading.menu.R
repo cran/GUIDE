@@ -1,6 +1,6 @@
 if (getRversion() >= "2.15.1") utils::globalVariables(c('strategy'))
-  
-  trading.menu <-
+
+trading.menu <-
 function(){
   trading.strat <- function(panel){
     if (panel$strategy == "Bull Spread"){

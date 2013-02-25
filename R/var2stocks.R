@@ -1,12 +1,12 @@
 if (getRversion() >= "2.15.1") utils::globalVariables(c('val1',
- 'val2',
- 'mu1',
- 'mu2',
- 'sigma1',
- 'sigma2',
- 'conf',
- 'corr',
- 'horizon'))
+                                                        'val2',
+                                                        'mu1',
+                                                        'mu2',
+                                                        'sigma1',
+                                                        'sigma2',
+                                                        'conf',
+                                                        'corr',
+                                                        'horizon'))
 
 var2stocks <-
 function(){
@@ -28,12 +28,12 @@ function(){
     cov12 = corr*sigma1*sigma2
     cov = matrix(c(sigma1^2,cov12,cov12,sigma2^2),nrow=2,byrow=F)
     portrisk = t(weights) %*% (cov %*% weights)
-    portvariable= (qnorm(conf)*portrisk*sqrt(horizon) - portreturn)*portsize
+    portvar = (qnorm(conf)*portrisk*sqrt(horizon) - portreturn)*portsize
     
     portvar<-round(portvar,2)
     plot(1:20, 1:20, type="n", xlab="", ylab="",
          axes=FALSE, frame = TRUE)
-    text(10, 10, paste("variable= ", portvar, sep=""),cex=1.5)
+    text(10, 10, paste("VaR= ", portvar, sep=""),cex=1.5)
     
     panel
   }
@@ -59,6 +59,6 @@ function(){
 #   rp.slider(panel=my.panel,variable=horizon,from=0.25,to=1,resolution=0.1,title = "Horizon:",action=my.redraw,showvalue=T,initval=1)
   rp.tkrplot(panel = my.panel, name = my.tkrplot, plotfun = my.draw)
   #rp.do(my.panel, my.draw)
-#   rp.radiogroup(panel=my.panel,variable=plottype,title="Plot Type",values=c("Confidence level-Correlation","Confidence level-Horizon"),action=my.draw1)
+#   rp.radiogroup(panel=my.panel,variable=plottype,title="Plot Type",vals=c("Confidence level-Correlation","Confidence level-Horizon"),action=my.draw1)
 #  rp.do(my.panel, my.draw1)
   }

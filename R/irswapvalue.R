@@ -1,9 +1,9 @@
 if (getRversion() >= "2.15.1") utils::globalVariables(c(  'Notional',
- 'fixed',
- 'float0',
- 'SpotRate',
- 'spotfreq',
- 'settlement'))
+                                                          'fixed',
+                                                          'float0',
+                                                          'SpotRate',
+                                                          'spotfreq',
+                                                          'settlement'))
 
 irswapvalue <-
 function(){
@@ -76,10 +76,10 @@ function(){
   rp.textentry(panel=my.panel,variable=start,title="Months for 1st payment:",action=my.redraw,initval=3)
   rp.textentry(panel=my.panel,variable=SpotRate,title="Spot Rates:                        ",action=my.redraw,initval="0.054, 0.056, 0.058")
   rp.radiogroup(panel = my.panel, variable= spotfreq,
-                values = c("continuous", "quarterly", "semi-annual", "annual"),
+                vals = c("continuous", "quarterly", "semi-annual", "annual"),
                 action = my.redraw, title = "Frequency of spot rates")
   rp.radiogroup(panel = my.panel, variable= settlement,
-                values = c("quarterly", "semi-annual", "annual"),
+                vals = c("quarterly", "semi-annual", "annual"),
                 action = my.redraw, title = "Settlement frequency")
   rp.tkrplot(panel = my.panel,name = my.tkrplot, plotfun = my.draw)
   #rp.do(my.panel, my.draw)

@@ -1,6 +1,5 @@
 if (getRversion() >= "2.15.1") utils::globalVariables(c("opttype","plottype"))
 
-
 Premium3D <-
 function(){
   
@@ -63,10 +62,10 @@ function(){
   my.panel <- rp.control(title = "Premium 3D Plots", rf = 0.04, sigma = 0.20,size=c(500,400))
   
   rp.radiogroup(panel = my.panel, variable= opttype,
-                values = c("Call", "Put"), 
+                vals = c("Call", "Put"), 
                 action = my.draw, title = "Type of Option")
   rp.radiogroup(panel = my.panel, variable= plottype,
-                values = c("Stockprice-Time", "Strike-Time"), 
+                vals = c("Stockprice-Time", "Strike-Time"), 
                 action = my.draw, title = "X-Y axis: ")
   rp.doublebutton(panel = my.panel, variable= sigma, step = 0.05, range = c(0.00, 0.50),
                   title = "sigma",  action = my.draw)
