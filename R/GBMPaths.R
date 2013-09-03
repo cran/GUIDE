@@ -36,7 +36,7 @@ function(){
     x.axis <- seq(0,1,length=steps+1)  
     
     if (length(dev.list()) == 0) 
-      x11()
+      dev.new()
     my.title <- paste(paths, " Geometric Brownian Motions", "(mu=", mu, ", sigma=", sigma,")")
     matplot(prices,main= my.title,xlab="time", ylab="price",type='l',lwd=2)
     panel

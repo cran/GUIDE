@@ -34,6 +34,6 @@ S Subramanian <ssubramanian@sssihl.edu.in>
 }
 
 \seealso{
-\code{\link[GUIDE]{BinomTree}}
+\code{\link[GUIDE]{stockoptiontreegui}}
 }
 

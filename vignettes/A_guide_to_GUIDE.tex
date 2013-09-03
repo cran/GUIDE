@@ -3,8 +3,9 @@
 \usepackage{longtable}
 
 
+\usepackage{Sweave}
 \begin{document}
-\SweaveOpts{concordance=TRUE}
+\input{A_guide_to_GUIDE-concordance}
 % \VignetteIndexEntry{A guide to GUIDE}
 
 
@@ -25,25 +26,31 @@ GUIDE is an acronym for for GUI for DErivatives. The package provides neat UIs l
 
 \section{Installation}
  Installation is easy and can be done by calling the command line function
-<<install, eval=FALSE>>=
-install.packages("GUIDE")
-@
+\begin{Schunk}
+\begin{Sinput}
+> install.packages("GUIDE")
+\end{Sinput}
+\end{Schunk}
 
 Alternatively, one can also install it from the R console package installation menu. To start using the package, enter 
-<<load, eval=FALSE>>=
-library("GUIDE")
-@
+\begin{Schunk}
+\begin{Sinput}
+> library("GUIDE")
+\end{Sinput}
+\end{Schunk}
 You can also load the package from the console menu.
 
 To start using the package, enter 
-<<start, eval=FALSE>>=
-GUIDE()
-@
+\begin{Schunk}
+\begin{Sinput}
+> GUIDE()
+\end{Sinput}
+\end{Schunk}
 
 You should then see the main menu of the package as in Figure \ref{Fig:mainmenu}. 
 
 \section{Menus}
-GUIDE has 55 functions. A complete list of functions (in menu-wise order) along with a short description is provided in Table \ref{Tab:fns}
+GUIDE has 64 functions. A complete list of functions (in menu-wise order) along with a short description is provided in Table \ref{Tab:fns}
 
 
 \begin{center}
@@ -68,6 +75,7 @@ Name of Function & Description  \\
 forwardcommodity & Calculate the forward value of a commodity \\
 forwardcurrency & Calculate the forward value of a currency\\
 forwardstock & Calculate the forward value of a stock\\
+bondforwardtreegui & Calculate the forward value of a bond using a tree\\
 fra & Calculate the forward rate\\
 fravalue & Calculate the value of a forward rate agreement\\
 \\
@@ -75,18 +83,22 @@ fravalue & Calculate the value of a forward rate agreement\\
 futurescommodity & Calculate the value of a commodity futures\\
 futurescurrency & Calculate the value of a currency futures\\
 futuresstock & Calculate the value of a stock futures\\
+bondfuturestreegui & Calculate the futures value of a bond using a tree\\
 eurodollar & Calculate the value of a eurodollar futures contract\\
 cashprice & Calculate the Cash price of a T Bond Futures\\
 \\
 \multicolumn{2}{ c }{Options} \\
 basicpayoffs & Plot payoffs / profit and loss of European Call/Put\\
-Premium3D & Option premium as a function of stock price/strike and time\\
-BinomTree & Plot a CRR stock / Option Tree\\
+Premium3D & Plot Option premium as a function of stock price/strike and time\\
+stockoptiontreegui & Plot a Stock Option Tree\\
+bondoptiontreegui & Plot a Bond Option Tree\\
 blackscholes & Calculate the Black scholes formula value of a European Call/Put\\
 impvol & Calculate the Black scholes implied volatility of a European Call/Put\\
 calcgreeks & Calculate the greeks for a European Call/Put\\
 stockTimeGreeks & Plot of option greeks as a function of stock price and time\\
 greekneutrality & Calculate the hedge positions for  European Call/Put\\
+captreegui & Plot a Cap tree\\
+floortreegui & Plot a Floor tree\\
 bullspreadcalls & Profit \& Loss plot of bull spread with calls\\
 bearspreadputs & Profit \& Loss plot of bear spread with puts\\
 butterfly & Profit \& Loss plot of butterfly\\
@@ -102,6 +114,8 @@ strap & Profit \& Loss plot of strap\\
 irswapvalue & Calculate the value of an interest rate swap\\
 curswapvalue & Calculate the value of a fixed-fixed currency swap\\
 cdswap & Calculate the spread in a credit default swap\\
+swaptreegui & Plot an interest rate swap tree\\
+swaptiontreegui & Plot an interest rate swaption tree\\
 \\
 \multicolumn{2}{ c }{Stochastic Processes} \\
 ABMPaths & Simulate and plot Arithmetic Brownian Motion path(s)\\
@@ -114,6 +128,8 @@ var2stocks & Calculate the value at risk of two stocks\\
 varbehavior & Plot the value at risk as a function of its determinants\\
 \\
 \multicolumn{2}{ c }{Bonds} \\
+ratetreegui & Plot a interest rate tree\\
+bondtreegui & Plot a bond price tree\\
 bondprice & Calculate the price of a bond\\
 priceyield & Plot the relationship between price and yield of a bond\\
 pricematurity & Plot the relationship between price and maturity of a bond\\

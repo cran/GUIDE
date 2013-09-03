@@ -46,7 +46,7 @@ function(){
     premium <- outer(x.axis.variable, time, FUN = BSMPrice)
     
     if (length(dev.list()) == 0) 
-      x11()
+      dev.new()
     colors <- c("cyan", "steelblue", "green","greenyellow" , "lightgreen","deepskyblue" ,"darksalmon","gold", "skyblue", "orange", "violet")
     my.title <- paste(opttype, " Premium (Rf= ", rf, ", sigma= ", sigma,")")
     persp(x.axis.variable, time, premium, xlab = x.axis.variable.name, ticktype="detailed",main= my.title,theta= -40,phi= 10,col="cyan")

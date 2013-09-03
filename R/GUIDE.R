@@ -15,8 +15,14 @@ main.menu <- function(panel) {
   else if(panel$menu == "Commodity"){
     forwardcommodity()
   }
+    else if(panel$menu == "Bond Forward Tree"){
+    bondforwardtreegui()
+  }
   else if(panel$menu == "Stocks"){
     futuresstock()
+  }
+  else if(panel$menu == "Bond Futures Tree"){
+    bondfuturestreegui()
   }
   else if(panel$menu == "Currencies"){
     futurescurrency()
@@ -42,8 +48,17 @@ main.menu <- function(panel) {
   else if (panel$menu=="Greeks 3D plots"){
     stockTimeGreeks()
   }
-  else if (panel$menu=="Binomial Tree"){
-    BinomTree()
+  else if (panel$menu=="Stock Option Tree"){
+    stockoptiontreegui()
+  }
+  else if (panel$menu=="Cap Tree"){
+    captreegui()
+  }
+  else if (panel$menu=="Floor Tree"){
+    floortreegui()
+  }
+  else if (panel$menu=="Bond Option Tree"){
+    bondoptiontreegui()
   }
   else if (panel$menu=="Black Scholes"){
     blackscholes()
@@ -105,6 +120,12 @@ main.menu <- function(panel) {
   else if(panel$menu=="Credit Default swap"){
     cdswap()
   }
+  else if(panel$menu=="Interest rate swap Tree"){
+    swaptreegui()
+  }
+  else if(panel$menu=="Swaption Tree"){
+    swaptiontreegui()
+  }
   else if (panel$menu=="Single stock"){
     var1stock()
   }
@@ -113,6 +134,12 @@ main.menu <- function(panel) {
   }
   else if (panel$menu=="VaR Behavior graphs"){
     varbehavior()
+  }
+  else if (panel$menu=="Rate Tree"){
+    ratetreegui()
+  }
+  else if (panel$menu=="Bond Tree"){
+    bondtreegui()
   }
   else if (panel$menu=="Bond Price"){
     bondprice()
@@ -150,13 +177,13 @@ main.panel <- rp.control(title = "GUIDE",size=c(1366,768))
 menu.list = list(
   #  list("Time Value", "Present Value of an amount", "Future Value of an amount", "Present Value of Annuity", "Future Value of Annuity"),
   #  list("Stocks", "Single stage growth","Two stage growth"),
-  list("Forwards", "Stock","Currency","Commodity", "Forward Rate","Value of FRA"),
-  list("Futures", "Stocks", "Commodities","Currencies", "Eurodollar futures","Cash Price of T-Bond Future"),
-  list("Options","Payoff / P&L graphs", "Premium 3D plots","Binomial Tree", "Black Scholes", "Implied Volatility", "Option Greeks", "Greeks 3D plots","Hedging with greeks","Trading Strategies"),
-  list("Swaps","Interest rate swap", "Currency swap (Fixed-Fixed)", "Credit Default swap"),
+  list("Forwards", "Commodity","Currency","Stock", "Bond Forward Tree", "Forward Rate","Value of FRA"),
+  list("Futures", "Commodities","Currencies","Stocks", "Bond Futures Tree", "Eurodollar futures","Cash Price of T-Bond Future"),
+  list("Options","Payoff / P&L graphs", "Premium 3D plots","Stock Option Tree","Bond Option Tree","Cap Tree", "Floor Tree", "Black Scholes", "Implied Volatility", "Option Greeks", "Greeks 3D plots","Hedging with greeks","Trading Strategies"),
+  list("Swaps","Interest rate swap", "Currency swap (Fixed-Fixed)", "Credit Default swap","Interest rate swap Tree", "Swaption Tree"),
   list("Stochastic Processes", "Brownian Motion", "Arithmetic Brownian Motion","Geometric Brownian Motion","Jump Diffusion"),
   list("Value at Risk", "Single stock", "Two stocks","VaR Behavior graphs"),
-  list("Bonds", "Bond Price","Price-Yield plot","Price-Maturity plot", "Duration", "Duration & Maturity","Duration & Yield","Duration & Coupon", "Convexity","DV01" ),
+  list("Bonds","Rate Tree", "Bond Tree", "Bond Price","Price-Yield plot","Price-Maturity plot", "Duration", "Duration & Maturity","Duration & Yield","Duration & Coupon", "Convexity","DV01" ),
   list("Utilities","Present Value of an amount", "Future Value of an amount", "Present Value of Annuity", "Future Value of Annuity","Rate conversion", "p-value calculator","z-value calculator"))
 
 rp.menu(panel = main.panel, variable= menu, labels=menu.list, action = main.menu)

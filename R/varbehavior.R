@@ -65,7 +65,7 @@ function(){
       var <- outer(conflvl, correl, FUN = VaR1)
       
       if (length(dev.list()) == 0) 
-        x11()
+        dev.new()
       colors <- c("cyan", "steelblue", "green","greenyellow" , "lightgreen","deepskyblue" ,"darksalmon","gold", "skyblue", "orange", "violet")
       my.title <- paste("Value at Risk")
       persp(x.axis.variable, y.axis.variable, var, xlab = x.axis.variable.name, ylab = y.axis.variable.name,ticktype="detailed",main= my.title,theta= -40,phi= 10,col="darksalmon")
@@ -84,7 +84,7 @@ function(){
       var <- outer(conflvl, horizon1, FUN = VaR2)
       
       if (length(dev.list()) == 0) 
-        x11()
+        dev.new()
       colors <- c("cyan", "steelblue", "green","greenyellow" , "lightgreen","deepskyblue" ,"darksalmon","gold", "skyblue", "orange", "violet")
       my.title <- paste("Value at Risk")
       persp(x.axis.variable, y.axis.variable, var, xlab = x.axis.variable.name, ylab = y.axis.variable.name,ticktype="detailed",main= my.title,theta= -40,phi= 10,col="gold")

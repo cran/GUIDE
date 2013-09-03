@@ -105,7 +105,7 @@ function(){
     
     
     if (length(dev.list()) == 0) 
-      x11()
+      dev.new()
     my.title <- paste(opttype, greek, "(Rf= ", rf, ", sigma= ", sigma,")")
     persp(stockprice, time, greekval, zlab= greek, ticktype = "detailed", main= my.title,theta= -40,phi= 10,col=whichcolor(greek))
     panel
