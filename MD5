@@ -1,4 +1,4 @@
-4576a028ebab00e399faa813c621572f *DESCRIPTION
+3344e01148e3bfceb73b40612a7aa624 *DESCRIPTION
 df390c53434517b304ac5db487184641 *NAMESPACE
 2440fdd1482b38728056b8a1782b003e *R/ABMPaths.R
 09ef450562bdd68b597831f24724bff5 *R/BrownianPaths.R
@@ -65,6 +65,9 @@ a998641014dfa0aa8431b2f65a45075b *R/swaptreegui.R
 b9db1a4bb8acdd04b359f5840d5fb67f *R/var2stocks.R
 f5fec0ced160813413ba465a4539c2f9 *R/varbehavior.R
 3392b69fa9f0b7123435ec03f63dbc51 *R/zval.R
+2f986a71b1e11a24d9d8daed6c3d51cd *build/vignette.rds
+8706d1190f5703755c787ea2d20cdbaa *inst/doc/A_guide_to_GUIDE.R
+75ec6efb666ba38215a8069f3aacb26b *inst/doc/A_guide_to_GUIDE.Rnw
 d360e44f41a68aab7d3e6ad51dc5bf77 *inst/doc/A_guide_to_GUIDE.pdf
 5469b24eb20fc6a4882bd1f4d2b00fa3 *inst/extdata/guide_img1.gif
 0c3a978ba7be29909797decda83ea6b6 *man/ABMPaths.Rd
@@ -133,7 +136,6 @@ a64ab96b28674ec80be6cf11dbc50f81 *man/var1stock.Rd
 5e89e1963ae04c02e11eb764f72cf88b *man/varbehavior.Rd
 a62afbd9afe49878239722cf0ad07137 *man/zval.Rd
 75ec6efb666ba38215a8069f3aacb26b *vignettes/A_guide_to_GUIDE.Rnw
-d360e44f41a68aab7d3e6ad51dc5bf77 *vignettes/A_guide_to_GUIDE.pdf
 ae90eaeda863f0d3284f180e0c11f4ac *vignettes/A_guide_to_GUIDE.tex
 7699e6f9ba1fcccc6c2771cd8ab8362a *vignettes/bondprice.jpg
 4258c9d07ff906b2881c2df736d39ef7 *vignettes/bs2.jpg
