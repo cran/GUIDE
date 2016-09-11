@@ -1,10 +1,3 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c('S',
-                                                        'r',
-                                                        'storagetype',
-                                                        'storage',
-                                                        'storagetime',
-                                                        'convenience'))
-
 futurescommodity <-
 function(){
   my.draw <- function(panel) {

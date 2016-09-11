@@ -1,6 +1,3 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c('fromfrequency',
-                                                        'tofrequency',
-                                                        'fromrate'))
 rate <-
 function(){
   my.draw <- function(panel) {

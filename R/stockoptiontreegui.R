@@ -1,8 +1,5 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c("s0","strike","u","d", "q", "maturity",  "Rate", "nsteps", "exercisetype","opttype"))
-
-
 stockoptiontreegui <-
-  function(){
+function(){
     
     my.draw <- function(panel){
       
@@ -69,12 +66,7 @@ stockoptiontreegui <-
       
       #stocktree(s0=100,u=1.25,d=0.8,q=0.6,nsteps=3)
       
-      
-      
-      
-      
-      
-      stockoptiontree <- function(strike,opttype,exercisetype,s0,u,d,q,maturity,Rate){
+     stockoptiontree <- function(strike,opttype,exercisetype,s0,u,d,q,maturity,Rate){
         
         
         nsteps = maturity
@@ -152,11 +144,7 @@ stockoptiontreegui <-
       
       #stockoptiontree(strike=110,opttype="Call",exercisetype="European",s0=100,u=1.25,d=0.8,q=0.6,maturity=3,Rate=5.0)
       
-      
-      
-      
-      
-      
+        
       
       S=stocktree(s0,u,d,q,nsteps)
       C=stockoptiontree(strike,opttype,exercisetype,s0,u,d,q,maturity,Rate)
@@ -173,8 +161,8 @@ stockoptiontreegui <-
       nrows = dim(C)[1]
       ncols = dim(C)[2]
       
-      if (length(dev.list()) == 0) 
-        dev.new()
+      #if (length(dev.list()) == 0) 
+      #  dev.new()
       plot(1:nrows, 1:ncols, type="n",ylab="",xlab="", 
            axes=FALSE, frame = FALSE)
       
@@ -194,34 +182,33 @@ stockoptiontreegui <-
       panel
     }   
     
-    
-    
-    
+    my.redraw <- function(panel) #not needed bcos we are not using tkr plot
+    {
+      rp.tkrreplot(panel, my.tkrplot)
+      panel                                                                       
+    }
+      
     my.panel <- rp.control(title = "Stock Option Tree")
-    
     rp.radiogroup(panel = my.panel, variable= opttype,
                   vals = c("Call", "Put"), 
-                  action = my.draw, title = "Type of Option")
-    
+                  action = my.redraw, title = "Type of Option")
     rp.radiogroup(panel = my.panel, variable= exercisetype,
                   vals = c("European", "American"), 
-                  action = my.draw, title = "Exercise style")
-    
-    rp.textentry(panel=my.panel,variable=s0,action=my.draw,title="Stock price     ",initval=100)
-    rp.textentry(panel=my.panel,variable=strike,action=my.draw,title="Strike price     ",initval=110)
-    #rp.textentry(panel=my.panel,variable=Time,action=my.draw,title="Time               ",initval=0.25)
-    #rp.textentry(panel=my.panel,variable=sigma,action=my.draw,title="Volatility         ",initval=0.25)
-    rp.textentry(panel=my.panel,variable=Rate,action=my.draw,title="Risk free rate  ",initval=4)
-    rp.textentry(panel=my.panel,variable=u,action=my.draw,title="u                   ",initval=1.1)
-    rp.textentry(panel=my.panel,variable=d,action=my.draw,title="d                   ",initval=0.9)
-    rp.textentry(panel=my.panel,variable=q,action=my.draw,title="q                   ",initval=0.5)
+                  action = my.redraw, title = "Exercise style")
+    rp.textentry(panel=my.panel,variable=s0,action=my.redraw,title="Stock price    ",initval=100)
+    rp.textentry(panel=my.panel,variable=strike,action=my.redraw,title="Strike price     ",initval=110)
+    #rp.textentry(panel=my.panel,variable=Time,action=my.draw,title="Time           ",initval=0.25)
+    #rp.textentry(panel=my.panel,variable=sigma,action=my.draw,title="Volatility      ",initval=0.25)
+    rp.textentry(panel=my.panel,variable=Rate,action=my.redraw,title="Rate per step  ",initval=4)
+    rp.textentry(panel=my.panel,variable=u,action=my.redraw,title="up per step    ",initval=1.1)
+    rp.textentry(panel=my.panel,variable=d,action=my.redraw,title="down per step",initval=0.9)
+    rp.textentry(panel=my.panel,variable=q,action=my.redraw,title="q per step      ",initval=0.5)
     #rp.textentry(panel=my.panel,variable=Div,action=my.draw,title="Dividend rate ",initval=0)
     rp.doublebutton(panel = my.panel, showvalue=TRUE, variable= nsteps, step = 1, range = c(1, 15),initval=3,
-                    title = "No. of Steps", action = my.draw)
+                    title = "No. of Steps", action = my.redraw)
     rp.radiogroup(panel = my.panel, variable= plot,
                   vals = c("Stock Tree", "Option Tree"), 
-                  action = my.draw, title = "Plot Type")
-    rp.do(my.panel, my.draw)
+                  pos = "right", action = my.redraw, title = "Plot Type")
+    rp.tkrplot(panel=my.panel, name=my.tkrplot, plotfun=my.draw, hscale=3, vscale=1.5)
+    #rp.do(my.panel, my.draw)
   }
-
-

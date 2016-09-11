@@ -1,5 +1,3 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c("tkrp","longcall1","longcall2","shortcalls","profit"))
-
 butterfly <-
 function(){
   

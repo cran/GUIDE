@@ -1,9 +1,3 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c(  'S',
-                                                          'K',
-                                                          'r',
-                                                          'div',
-                                                          'market',
-                                                          'opttype'))
 impvol <-
 function(){
   my.draw <- function(panel) {

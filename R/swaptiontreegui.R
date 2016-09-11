@@ -1,8 +1,5 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c("FV","r0", "u","d", "q", "fixedrate", "optmaturity","swapmaturity", "coupon", "nsteps", "ratesteps"))
-
-
 swaptiontreegui <-
-  function(){
+function(){
     
     my.draw <- function(panel){
       
@@ -232,9 +229,6 @@ swaptiontreegui <-
       S = swaptree(FV,fixedrate,swapmaturity,r0,u,d,q)[[2]]
       
       
-      
-      
-      
       # set graphs options
       if (nsteps>= 2){
         cex=0.9
@@ -265,8 +259,8 @@ swaptiontreegui <-
       }
       
       
-      if (length(dev.list()) == 0) 
-        dev.new()
+#       if (length(dev.list()) == 0) 
+#         dev.new()
       plot(1:nrows, 1:ncols, type="n",ylab="",xlab="", 
            axes=FALSE, frame = FALSE)
       
@@ -279,24 +273,29 @@ swaptiontreegui <-
       panel
     }   
     
-    
+    my.redraw <- function(panel) #not needed bcos we are not using tkr plot
+    {
+      rp.tkrreplot(panel, my.tkrplot)
+      panel                                                                       
+    }   
     
     
     my.panel <- rp.control(title = "Swaption Tree")
     
-    rp.textentry(panel=my.panel,variable=FV,action=my.draw,title="Face value    ",initval=100)
-    rp.textentry(panel=my.panel,variable=strike,action=my.draw,title="strike            ",initval=0)
-    rp.textentry(panel=my.panel,variable=r0,action=my.draw,title="Rate              ",initval=5.0)
-    rp.textentry(panel=my.panel,variable=u,action=my.draw,title="u                   ",initval=1.1)
-    rp.textentry(panel=my.panel,variable=d,action=my.draw,title="d                   ",initval=0.9)
-    rp.textentry(panel=my.panel,variable=q,action=my.draw,title="q                   ",initval=0.5)
-    rp.textentry(panel=my.panel,variable=fixedrate,action=my.draw,title="Fixed Rate    ",initval=4.5)
+    rp.textentry(panel=my.panel,variable=FV,action=my.redraw,title="Face value       ",initval=100)
+    rp.textentry(panel=my.panel,variable=strike,action=my.redraw,title="strike               ",initval=0)
+    rp.textentry(panel=my.panel,variable=r0,action=my.redraw,title="Rate (initial)    ",initval=5.0)
+    rp.textentry(panel=my.panel,variable=u,action=my.redraw,title="up per step     ",initval=1.1)
+    rp.textentry(panel=my.panel,variable=d,action=my.redraw,title="down per step",initval=0.9)
+    rp.textentry(panel=my.panel,variable=q,action=my.redraw,title="q per step       ",initval=0.5)
+    rp.textentry(panel=my.panel,variable=fixedrate,action=my.redraw,title="Fixed Rate      ",initval=4.5)
     rp.doublebutton(panel = my.panel, showvalue=TRUE, variable= swapmaturity, step = 1, range = c(1, 15),initval=10,
-                    title = "Swap Maturity", action = my.draw)
+                    title = "Swap Maturity", action = my.redraw)
     rp.doublebutton(panel = my.panel, showvalue=TRUE, variable= optmaturity, step = 1, range = c(1, 15),initval=5,
-                    title = "Option Maturity", action = my.draw)
+                    title = "Option Maturity", action = my.redraw)
     rp.radiogroup(panel = my.panel, variable= plot,
                   vals = c("Swaption Tree", "Swap Tree","Rate Tree"), 
-                  action = my.draw, title = "Plot Type")
-    rp.do(my.panel, my.draw)
+                  action = my.redraw, title = "Plot Type")
+    rp.tkrplot(panel=my.panel, name=my.tkrplot, plotfun=my.draw, hscale=3, vscale=1.5)
+    #rp.do(my.panel, my.draw)
   }

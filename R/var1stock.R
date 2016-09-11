@@ -1,8 +1,3 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c('price',
-                                                        'conf',
-                                                        'horizon',
-                                                        'distribution'))
-
 var1stock <-
 function(){
 

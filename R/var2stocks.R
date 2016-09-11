@@ -1,13 +1,3 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c('val1',
-                                                        'val2',
-                                                        'mu1',
-                                                        'mu2',
-                                                        'sigma1',
-                                                        'sigma2',
-                                                        'conf',
-                                                        'corr',
-                                                        'horizon'))
-
 var2stocks <-
 function(){
   

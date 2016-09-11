@@ -1,7 +1,5 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c("FV","r0", "u","d", "q", "bondmaturity","futmaturity", "coupon", "nsteps", "ratesteps"))
-
 bondfuturestreegui <-
-  function(){
+function(){
     
     my.draw <- function(panel){
       
@@ -268,8 +266,8 @@ bondfuturestreegui <-
       }
       
       
-      if (length(dev.list()) == 0) 
-        dev.new()
+#       if (length(dev.list()) == 0) 
+#         dev.new()
       plot(1:nrows, 1:ncols, type="n",ylab="",xlab="", 
            axes=FALSE, frame = FALSE)
       
@@ -282,23 +280,28 @@ bondfuturestreegui <-
       panel
     }   
     
-    
+    my.redraw <- function(panel) #not needed bcos we are not using tkr plot
+    {
+      rp.tkrreplot(panel, my.tkrplot)
+      panel                                                                       
+    } 
     
     
     my.panel <- rp.control(title = "Bond Futures Tree")
     
-    rp.textentry(panel=my.panel,variable=FV,action=my.draw,title="Face value    ",initval=100)
-    rp.textentry(panel=my.panel,variable=r0,action=my.draw,title="Rate              ",initval=6.0)
-    rp.textentry(panel=my.panel,variable=coupon,action=my.draw,title="Coupon       ",initval=0.0)
-    rp.textentry(panel=my.panel,variable=u,action=my.draw,title="u                   ",initval=1.25)
-    rp.textentry(panel=my.panel,variable=d,action=my.draw,title="d                   ",initval=0.9)
-    rp.textentry(panel=my.panel,variable=q,action=my.draw,title="q                   ",initval=0.5)
+    rp.textentry(panel=my.panel,variable=FV,action=my.redraw,title="Face value       ",initval=100)
+    rp.textentry(panel=my.panel,variable=r0,action=my.redraw,title="Rate (initial)   ",initval=6.0)
+    rp.textentry(panel=my.panel,variable=coupon,action=my.redraw,title="Coupon          ",initval=0.0)
+    rp.textentry(panel=my.panel,variable=u,action=my.redraw,title="up per step     ",initval=1.25)
+    rp.textentry(panel=my.panel,variable=d,action=my.redraw,title="down per step",initval=0.9)
+    rp.textentry(panel=my.panel,variable=q,action=my.redraw,title="q per step       ",initval=0.5)
     rp.doublebutton(panel = my.panel, showvalue=TRUE, variable= bondmaturity, step = 1, range = c(1, 15),initval=6,
-                    title = "Bond Maturity", action = my.draw)
+                        title = "Bond Maturity", action = my.redraw)
     rp.doublebutton(panel = my.panel, showvalue=TRUE, variable= futmaturity, step = 1, range = c(1, 15),initval=4,
-                    title = "Futures Maturity", action = my.draw)
+                    title = "Futures Maturity", action = my.redraw)
     rp.radiogroup(panel = my.panel, variable= plot,
                   vals = c("Bond Futures Tree","Bond Tree", "Rate Tree"), 
-                  action = my.draw, title = "Plot Type")
-    rp.do(my.panel, my.draw)
+                  action = my.redraw, title = "Plot Type")
+    rp.tkrplot(panel=my.panel, name=my.tkrplot, plotfun=my.draw, hscale=3, vscale=1.5)
+    #rp.do(my.panel, my.draw)
   }

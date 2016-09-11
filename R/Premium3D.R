@@ -1,5 +1,3 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c("opttype","plottype"))
-
 Premium3D <-
 function(){
   
@@ -45,8 +43,8 @@ function(){
     
     premium <- outer(x.axis.variable, time, FUN = BSMPrice)
     
-    if (length(dev.list()) == 0) 
-      dev.new()
+    #if (length(dev.list()) == 0) 
+    #  dev.new()
     colors <- c("cyan", "steelblue", "green","greenyellow" , "lightgreen","deepskyblue" ,"darksalmon","gold", "skyblue", "orange", "violet")
     my.title <- paste(opttype, " Premium (Rf= ", rf, ", sigma= ", sigma,")")
     persp(x.axis.variable, time, premium, xlab = x.axis.variable.name, ticktype="detailed",main= my.title,theta= -40,phi= 10,col="cyan")
@@ -61,16 +59,16 @@ function(){
   
   my.panel <- rp.control(title = "Premium 3D Plots", rf = 0.04, sigma = 0.20,size=c(500,400))
   
-  rp.radiogroup(panel = my.panel, variable= opttype,
+  rp.radiogroup(panel = my.panel, variable= opttype, 
                 vals = c("Call", "Put"), 
-                action = my.draw, title = "Type of Option")
-  rp.radiogroup(panel = my.panel, variable= plottype,
+                action = my.redraw, title = "Type of Option")
+  rp.radiogroup(panel = my.panel, variable= plottype, pos = "right",
                 vals = c("Stockprice-Time", "Strike-Time"), 
-                action = my.draw, title = "X-Y axis: ")
+                action = my.redraw, title = "X-Y axis: ")
+  rp.tkrplot(my.panel, my.tkrplot, my.draw, pos="right", hscale = 2, vscale = 2) # doesnt appear very good
   rp.doublebutton(panel = my.panel, variable= sigma, step = 0.05, range = c(0.00, 0.50),
-                  title = "sigma",  action = my.draw)
+                  showvalue = TRUE, title = "sigma",  action = my.redraw)
   rp.doublebutton(panel = my.panel, variable= rf, step = 0.01, range = c(0.00, 0.10),
-                  title = "risk free", action = my.draw)
-  #rp.tkrplot(my.panel, my.tkrplot, my.draw) # doesnt appear very good
-  rp.do(my.panel, my.draw)
+                  showvalue = TRUE, title = "risk free", action = my.redraw)
+  #rp.do(my.panel, my.draw)
 }

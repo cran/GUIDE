@@ -1,8 +1,3 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c('longputs',
-                                                        'longcall',
-                                                        'profit',
-                                                        'tkrp'))
-
 strip <-
 function(){
   

@@ -1,5 +1,3 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c("S","K","r","div","opttype","greek"))
-
 calcgreeks <-
 function(){
   my.draw <- function(panel) {

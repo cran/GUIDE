@@ -1,9 +1,3 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c('tkrp',
-                                                        'shortcall1',
-                                                        'shortcall2',
-                                                        'longcalls',
-                                                        'profit'))
-
 reversebutterfly <-
 function(){
   

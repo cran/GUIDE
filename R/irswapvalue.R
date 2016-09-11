@@ -1,10 +1,3 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c(  'Notional',
-                                                          'fixed',
-                                                          'float0',
-                                                          'SpotRate',
-                                                          'spotfreq',
-                                                          'settlement'))
-
 irswapvalue <-
 function(){
   

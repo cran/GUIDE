@@ -1,13 +1,3 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c('Notional1',                                                    
-                                                        'fixed1',
-                                                        'homerate',
-                                                        'Notional2',
-                                                        'fixed2',
-                                                        'foreignrate',
-                                                        'SpotRate',
-                                                        'nperiods',
-                                                        'settlement'))
-
 curswapvalue <-
 function(){
   

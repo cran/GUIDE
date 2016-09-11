@@ -1,8 +1,3 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c('tkrp',
-                                                        'shortput',
-                                                        'shortcall',
-                                                        'profit'))
-
 reversestrangle <-
 function(){
   

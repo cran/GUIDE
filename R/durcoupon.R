@@ -1,7 +1,3 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c('tkrp',
-                                                        'discrate',
-                                                        'maturity'))
-
 durcoupon <-
 function(){
   
@@ -85,7 +81,7 @@ function(){
   #rp.doublebutton(my.panel,variable=couprate,step=0.25,title="Coupon (%  p.a.)",initval=10,range=c(1,15),showvalue=TRUE,action=my.redraw)
   rp.doublebutton(my.panel,variable=discrate,step=0.5,title="Discount Rate (%  p.a.)",initval=10,range=c(1,15),showvalue=TRUE,action=my.redraw)
   rp.doublebutton(my.panel,variable=maturity,step=1,title="Maturity (Yrs)",initval=10,range=c(1,25),showvalue=TRUE,action=my.redraw)
-  rp.tkrplot(panel=my.panel , name=tkrp, plotfun=my.draw)
+  rp.tkrplot(panel=my.panel, name=tkrp, plotfun=my.draw, hscale=2,vscale=1.8)
   
   #rp.do(my.panel, my.draw)
 }

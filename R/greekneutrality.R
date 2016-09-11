@@ -1,12 +1,3 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c('positions',
-                                                        'deltas',
-                                                        'gammas',
-                                                        'vegas',
-                                                        'neutrality',
-                                                        'option1',
-                                                        'option2',
-                                                        'tkrp'))
-
 greekneutrality <-
 function(){
   

@@ -1,8 +1,3 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c('tkrp',
-                                                        'shortput',
-                                                        'shortcall',
-                                                        'profit'))
-
 reversestraddle <-
 function(){
   
@@ -29,7 +24,7 @@ function(){
       
       if (shortput){
         S = c(minprice,k1,k2,maxprice)
-        profits1<- -pmax(S-k1,0)+p1
+        profits1<- -pmax(k1-S,0)+p1
         lines(S,profits1,type='l',col="blue", lwd=2)
       }
       

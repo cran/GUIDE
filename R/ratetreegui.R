@@ -1,9 +1,5 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c("r0", "u","d", "q", "nsteps", "ratesteps"))
-
-
-
 ratetreegui <-
-  function(){
+function(){
     
     my.draw <- function(panel){
       
@@ -88,8 +84,8 @@ ratetreegui <-
       ncols = dim(R)[2]
       
       
-      if (length(dev.list()) == 0) 
-        dev.new()
+#       if (length(dev.list()) == 0) 
+#         dev.new()
       plot(1:nrows, 1:ncols, type="n",ylab="",xlab="", 
            axes=FALSE, frame = FALSE)
       
@@ -102,22 +98,21 @@ ratetreegui <-
       panel
     }   
     
-    
+    my.redraw <- function(panel) #not needed bcos we are not using tkr plot
+    {
+      rp.tkrreplot(panel, my.tkrplot)
+      panel                                                                       
+    }  
     
     
     my.panel <- rp.control(title = "Rate Tree")
     
-    rp.textentry(panel=my.panel,variable=r0,action=my.draw,title="Rate              ",initval=5.0)
-    rp.textentry(panel=my.panel,variable=u,action=my.draw,title="u                   ",initval=1.1)
-    rp.textentry(panel=my.panel,variable=d,action=my.draw,title="d                   ",initval=0.9)
-    rp.textentry(panel=my.panel,variable=q,action=my.draw,title="q                   ",initval=0.5)
+    rp.textentry(panel=my.panel,variable=r0,action=my.redraw,title="Rate (initial)    ",initval=5.0)
+    rp.textentry(panel=my.panel,variable=u,action=my.redraw,title="up per step     ",initval=1.1)
+    rp.textentry(panel=my.panel,variable=d,action=my.redraw,title="down per step",initval=0.9)
+    rp.textentry(panel=my.panel,variable=q,action=my.redraw,title="q per step       ",initval=0.5)
     rp.doublebutton(panel = my.panel, showvalue=TRUE, variable= ratesteps, step = 1, range = c(1, 16),initval=10,
-                    title = "Rate tree steps", action = my.draw)
-    rp.do(my.panel, my.draw)
+                    title = "Rate tree steps", action = my.redraw)
+    rp.tkrplot(panel=my.panel, name=my.tkrplot, plotfun=my.draw, hscale=3, vscale=1.5)
+    #rp.do(my.panel, my.draw)
   }
-
-
-
-
-
-

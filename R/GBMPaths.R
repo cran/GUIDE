@@ -35,8 +35,8 @@ function(){
     
     x.axis <- seq(0,1,length=steps+1)  
     
-    if (length(dev.list()) == 0) 
-      dev.new()
+#     if (length(dev.list()) == 0) 
+#       dev.new()
     my.title <- paste(paths, " Geometric Brownian Motions", "(mu=", mu, ", sigma=", sigma,")")
     matplot(prices,main= my.title,xlab="time", ylab="price",type='l',lwd=2)
     panel
@@ -52,11 +52,11 @@ function(){
   
   
   rp.doublebutton(panel = my.panel, variable= mu, step = 0.04, range = c(0.00, 0.20),
-                  title = "Drift", action = my.draw)
+                  showvalue=TRUE,title = "Drift", action = my.redraw)
   rp.doublebutton(panel = my.panel, variable= sigma, step = 0.05, range = c(0.00, 0.50),
-                  title = "Volatility",  action = my.draw)
-  #   rp.tkrplot(my.panel, my.tkrplot, my.draw) # doesnt appear very good
+                  showvalue=TRUE,title = "Volatility",  action = my.redraw)
   rp.doublebutton(panel = my.panel, variable= paths, step = 1, range = c(1, 10),
-                  title = "Paths", action = my.draw)
-  rp.do(my.panel, my.draw)
+                  showvalue=TRUE,title = "Paths", action = my.redraw)
+  rp.tkrplot(my.panel, my.tkrplot, my.draw, pos= "right", hscale=2, vscale=1.8) # doesnt appear very good
+  #rp.do(my.panel, my.draw)
 }

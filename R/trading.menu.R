@@ -1,5 +1,3 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c('strategy'))
-
 trading.menu <-
 function(){
   trading.strat <- function(panel){

@@ -1,6 +1,3 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c("nu","delta","lambda"))
-
-
 JDPaths <-
 function(){
   #   http://www.thetaris.com/wiki/Jump_Diffusion
@@ -44,8 +41,8 @@ function(){
     
     x.axis <- seq(0,1,length=steps+1)  
     
-    if (length(dev.list()) == 0) 
-      dev.new()
+    #if (length(dev.list()) == 0) 
+    #  dev.new()
     my.title <- paste(paths, " Jump Diffusion Motions", "(mu=", mu, ", sigma=", sigma,")")
     matplot(prices,main= my.title,xlab="time", ylab="price",type='l',lwd=2)
     panel
@@ -61,17 +58,17 @@ function(){
   
   
   rp.doublebutton(panel = my.panel, variable= mu, step = 0.04, range = c(0.00, 0.20),
-                  title = "Drift", action = my.draw)
+                  showvalue=TRUE, title = "Drift", action = my.redraw)
   rp.doublebutton(panel = my.panel, variable= sigma, step = 0.05, range = c(0.00, 0.50),
-                  title = "Volatility",  action = my.draw)
-  #   rp.tkrplot(my.panel, my.tkrplot, my.draw) # doesnt appear very good
+                  showvalue=TRUE, title = "Volatility",  action = my.redraw)
+  rp.tkrplot(my.panel, my.tkrplot, pos ="right", my.draw, hscale = 2, vscale = 1.8) # doesnt appear very good
   rp.doublebutton(panel = my.panel, variable= nu, step = 0.1, range = c(-0.2, 0.2),
-                  title = "Mean of Jumps", action = my.draw)
+                  showvalue=TRUE, title = "Mean of Jumps", action = my.redraw)
   rp.doublebutton(panel = my.panel, variable= delta, step = 0.1, range = c(0, 0.3),
-                  title = "Std Dev of jumps", action = my.draw)
+                  showvalue=TRUE, title = "Std Dev of jumps", action = my.redraw)
   rp.doublebutton(panel = my.panel, variable= lambda, step = 2, range = c(1, 10),
-                  title = "Jump Intensity", action = my.draw)
+                  showvalue=TRUE, title = "Jump Intensity", action = my.redraw)
   rp.doublebutton(panel = my.panel, variable= paths, step = 1, range = c(1, 10),
-                  title = "Paths", action = my.draw)
+                  showvalue=TRUE, title = "Paths", action = my.redraw)
   rp.do(my.panel, my.draw)
 }

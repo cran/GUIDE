@@ -1,7 +1,11 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c("FV","r0", "u","d", "q", "bondmaturity", "coupon", "nsteps", "ratesteps"))
-
 bondtreegui <-
-  function(){
+function(){
+    
+    my.redraw <- function(panel)
+    {
+      rp.tkrreplot(panel, tkrp)
+      panel                                                                       
+    }
     
     my.draw <- function(panel){
       
@@ -66,14 +70,7 @@ bondtreegui <-
       }
       #ratetree(r0=6,u=1.25,d=0.9,q=0.5,ratesteps=4)
       
-      
-      
-      
-      
-      
-      
-      
-      
+ 
       
       bondtree <- function(FV,coupon,r0,u,d,q,bondmaturity,optional){
         
@@ -174,13 +171,9 @@ bondtreegui <-
       }
       #bondtree(FV=100,coupon=0,r0=5,u=1.1,d=0.9,q=0.5,bondmaturity=4)
       
-      
-      
-      
-      
+       
       R = ratetree(r0,u,d,q,ratesteps)
-      
-      
+
       P = bondtree(FV,coupon,r0,u,d,q,bondmaturity)
       
       
@@ -211,8 +204,8 @@ bondtreegui <-
       }
       
       
-      if (length(dev.list()) == 0) 
-        dev.new()
+#       if (length(dev.list()) == 0) 
+#         dev.new()
       plot(1:nrows, 1:ncols, type="n",ylab="",xlab="", 
            axes=FALSE, frame = FALSE)
       
@@ -230,18 +223,19 @@ bondtreegui <-
     
     my.panel <- rp.control(title = "Bond Tree")
     
-    rp.textentry(panel=my.panel,variable=FV,action=my.draw,title="Face value    ",initval=100)
-    rp.textentry(panel=my.panel,variable=r0,action=my.draw,title="Rate              ",initval=5.0)
-    rp.textentry(panel=my.panel,variable=coupon,action=my.draw,title="Coupon       ",initval=0.0)
-    rp.textentry(panel=my.panel,variable=u,action=my.draw,title="u                   ",initval=1.1)
-    rp.textentry(panel=my.panel,variable=d,action=my.draw,title="d                   ",initval=0.9)
-    rp.textentry(panel=my.panel,variable=q,action=my.draw,title="q                   ",initval=0.5)
+    rp.textentry(panel=my.panel,variable=FV,action=my.redraw,    title="Face value      ",initval=100)
+    rp.textentry(panel=my.panel,variable=r0,action=my.redraw,    title="Rate (initial)   ",initval=5.0)
+    rp.textentry(panel=my.panel,variable=coupon,action=my.redraw,title="Coupon          ",initval=0.0)
+    rp.textentry(panel=my.panel,variable=u,action=my.redraw,     title="up per step     ",initval=1.1)
+    rp.textentry(panel=my.panel,variable=d,action=my.redraw,     title="down per step",initval=0.9)
+    rp.textentry(panel=my.panel,variable=q,action=my.redraw,     title="q per step       ",initval=0.5)
     #rp.doublebutton(panel = my.panel, showvalue=TRUE, variable= ratesteps, step = 1, range = c(1, 16),initval=10,
-    #                title = "Rate tree steps", action = my.draw)
+    #                title = "Rate tree steps", action = my.redraw)
     rp.doublebutton(panel = my.panel, showvalue=TRUE, variable= bondmaturity, step = 1, range = c(1, 15),initval=10,
-                    title = "Bond Maturity", action = my.draw)
+                    title = "Bond Maturity", action = my.redraw)
     rp.radiogroup(panel = my.panel, variable= plot,
                   vals = c("Bond Tree","Rate Tree"), 
-                  action = my.draw, title = "Plot Type")
-    rp.do(my.panel, my.draw)
+                  pos="right", action = my.redraw, title = "Plot Type")
+    rp.tkrplot(panel=my.panel , name=tkrp, plotfun=my.draw, pos="right",hscale=2,vscale=1.9)
+    #rp.do(my.panel, my.draw)
   }

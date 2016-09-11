@@ -1,8 +1,3 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c('S',
-                                                        'r',
-                                                        'incometype',
-                                                        'income',
-                                                        'incometime'))
 futurescurrency <-
 function(){
   my.draw <- function(panel) {

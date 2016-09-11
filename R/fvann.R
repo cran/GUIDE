@@ -1,5 +1,3 @@
-if (getRversion() >= "2.15.1") utils::globalVariables(c("r","Instalment"))
-
 fvann <-
 function(){
   my.draw <- function(panel) {
