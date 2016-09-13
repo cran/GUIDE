@@ -1,10 +1,10 @@
-dfb144f426904e5e9182531276cf9463 *DESCRIPTION
-d3ce4d453665764371a1032716a7f542 *NAMESPACE
-c9c27dc0fb35b923a304920c5b6e0244 *R/ABMPaths.R
+354d6fe26d5278abf04f05468386aaae *DESCRIPTION
+c22b3efc6b96ba9b16bcfc662b57d023 *NAMESPACE
+e1032d0c78d444c2f036306cdb3a4db6 *R/ABMPaths.R
 874f592bdf1d653accad0be0ef7504e9 *R/BrownianPaths.R
 5b7d00079e45e325e295513f32ff540b *R/GBMPaths.R
 242122157edee38d89ede9816fdec3ae *R/GUIDE-internal.R
-7095214c5ce527f7394b0bccff9c3e79 *R/GUIDE.R
+bf33ff7bbdda31b55652f8b41ddb0a9e *R/GUIDE.R
 f2e72deca88f55de9f6e5d6f92855eb1 *R/JDPaths.R
 bc05428c822f5a435e243e3bb10b9e82 *R/Premium3D.R
 fed94a87f1152c29658bd891f288a293 *R/basicpayoffs.R
@@ -70,7 +70,7 @@ ed1944d220031485f7bd838498997521 *build/vignette.rds
 8706d1190f5703755c787ea2d20cdbaa *inst/doc/A_guide_to_GUIDE.R
 75ec6efb666ba38215a8069f3aacb26b *inst/doc/A_guide_to_GUIDE.Rnw
 35de47073d619a57463bca4b12ee8ed8 *inst/doc/A_guide_to_GUIDE.pdf
-ac8b4914f349b5c6b2aaa33d306fd7c0 *inst/extdata/Thumbs.db
+19e9a86ce402fe74abf2f96fe84aa775 *inst/extdata/Thumbs.db
 5469b24eb20fc6a4882bd1f4d2b00fa3 *inst/extdata/guide_img1.gif
 0c3a978ba7be29909797decda83ea6b6 *man/ABMPaths.Rd
 cdbda7eec939f1370f260ec34f3c139e *man/BrownianPaths.Rd

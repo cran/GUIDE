@@ -2,9 +2,9 @@ GUIDE <-
 function(){
 
 main.menu <- function(panel) {
-  
-  
-    
+
+
+
   #rp.messagebox(panel$menu, title = "Demo")
   if(panel$menu == "Stock"){
     forwardstock()
@@ -107,7 +107,7 @@ main.menu <- function(panel) {
   }
   else if (panel$menu=="Forward Rate"){
     fra()
-  } 
+  }
   else if (panel$menu=="Value of FRA"){
     fravalue()
   }
