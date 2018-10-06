@@ -33,11 +33,11 @@ function(){
   }
   
   my.panel <- rp.control(title = "Stock Forward")
-  rp.textentry(panel=my.panel,variable=S,title="Spot:                       ",action=my.redraw,initval=100)
-  rp.textentry(panel=my.panel,variable=r,title="Risk free:                ",action=my.redraw,initval=0.05)
-  rp.textentry(panel=my.panel,variable=t,title="Maturity:                ",action=my.redraw,initval=0.5)
-  rp.textentry(panel=my.panel,variable=income,title="Dividend(s):            ",action=my.redraw,initval=0)
-  rp.textentry(panel=my.panel,variable=incometime,title="Dividend times(s): ",action=my.redraw,initval=0)
+  rp.textentry(panel=my.panel,variable=S,labels="Spot:                       ",action=my.redraw,initval=100)
+  rp.textentry(panel=my.panel,variable=r,labels="Risk free:                ",action=my.redraw,initval=0.05)
+  rp.textentry(panel=my.panel,variable=t,labels="Maturity:                ",action=my.redraw,initval=0.5)
+  rp.textentry(panel=my.panel,variable=income,labels="Dividend(s):            ",action=my.redraw,initval=0)
+  rp.textentry(panel=my.panel,variable=incometime,labels="Dividend times(s): ",action=my.redraw,initval=0)
   rp.radiogroup(panel = my.panel, variable= incometype, vals = c("Yield","Cash"), 
                 action = my.redraw, title = "Type of Income")
   rp.tkrplot(panel = my.panel, name = my.tkrplot, plotfun = my.draw)

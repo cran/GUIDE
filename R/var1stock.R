@@ -28,10 +28,10 @@ function(){
   }
   
   my.panel <- rp.control(title = "Value at Risk- single stock/Portfolio")
-  rp.textentry(panel=my.panel,variable=price,title="Value:          ",action=my.redraw,initval=120)
-  rp.textentry(panel=my.panel,variable=mu,title="mu:             ",action=my.redraw,initval=0.10)
-  rp.textentry(panel=my.panel,variable=sigma,title="sigma:        ",action=my.redraw,initval=0.30)
-  rp.textentry(panel=my.panel,variable=conf,title="Conf level: ",action=my.redraw,initval=0.95)
+  rp.textentry(panel=my.panel,variable=price,labels="Value:          ",action=my.redraw,initval=120)
+  rp.textentry(panel=my.panel,variable=mu,labels="mu:             ",action=my.redraw,initval=0.10)
+  rp.textentry(panel=my.panel,variable=sigma,labels="sigma:        ",action=my.redraw,initval=0.30)
+  rp.textentry(panel=my.panel,variable=conf,labels="Conf level: ",action=my.redraw,initval=0.95)
   rp.doublebutton(my.panel,variable=horizon,step=1,title="Horizon (Months)",initval=12,showvalue=T,range=c(1,12),action=my.redraw)
 #   rp.slider(panel=my.panel,variable=horizon,from=0.25,to=1,resolution=0.1,title = "Horizon:",action=my.redraw,showvalue=T,initval=1)
   rp.radiogroup(panel = my.panel, variable= distribution,

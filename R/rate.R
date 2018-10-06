@@ -76,7 +76,7 @@ function(){
   rp.radiogroup(panel = my.panel, variable= tofrequency,
                 vals = c("continuous", "quarterly", "semi-annual", "annual"),
                 action = my.redraw, title = "Required frequency")
-  rp.textentry(panel=my.panel,variable=fromrate,title="Given rate: ",action=my.redraw,initval=0.05)
+  rp.textentry(panel=my.panel,variable=fromrate,labels="Given rate: ",action=my.redraw,initval=0.05)
   rp.tkrplot(panel = my.panel, name = my.tkrplot, plotfun = my.draw)
   #rp.do(my.panel, my.draw)
 }

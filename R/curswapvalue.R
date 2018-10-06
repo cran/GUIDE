@@ -62,15 +62,15 @@ function(){
   }
   
   my.panel <- rp.control(title = "Value of Currency Swap")
-  rp.textentry(panel=my.panel,variable=Notional1,title="Notional (Home):                ",action=my.redraw,initval=175)
-  rp.textentry(panel=my.panel,variable=fixed1,title="Payment Rate (Home):       ",action=my.redraw,initval=0.05)
-  rp.textentry(panel=my.panel,variable=homerate,title="Interest Rate (Home):         ",action=my.redraw,initval=0.02)
-  rp.textentry(panel=my.panel,variable=Notional2,title="Notional (Foreign):             ",action=my.redraw,initval=100)
-  rp.textentry(panel=my.panel,variable=fixed2,title="Payment Rate (Foreign):    ",action=my.redraw,initval=0.06)
-  rp.textentry(panel=my.panel,variable=foreignrate,title="Interest Rate (Foreign):       ",action=my.redraw,initval=0.04)
-  rp.textentry(panel=my.panel,variable=start,title="Months for 1st payment:   ",action=my.redraw,initval=12)
-  rp.textentry(panel=my.panel,variable=SpotRate,title="Spot Exchange rate:           ",action=my.redraw,initval=1.5)
-  rp.textentry(panel=my.panel,variable=nperiods,title="Number of Periods:            ",action=my.redraw,initval=3)
+  rp.textentry(panel=my.panel,variable=Notional1,labels="Notional (Home):                ",action=my.redraw,initval=175)
+  rp.textentry(panel=my.panel,variable=fixed1,labels="Payment Rate (Home):       ",action=my.redraw,initval=0.05)
+  rp.textentry(panel=my.panel,variable=homerate,labels="Interest Rate (Home):         ",action=my.redraw,initval=0.02)
+  rp.textentry(panel=my.panel,variable=Notional2,labels="Notional (Foreign):             ",action=my.redraw,initval=100)
+  rp.textentry(panel=my.panel,variable=fixed2,labels="Payment Rate (Foreign):    ",action=my.redraw,initval=0.06)
+  rp.textentry(panel=my.panel,variable=foreignrate,labels="Interest Rate (Foreign):       ",action=my.redraw,initval=0.04)
+  rp.textentry(panel=my.panel,variable=start,labels="Months for 1st payment:   ",action=my.redraw,initval=12)
+  rp.textentry(panel=my.panel,variable=SpotRate,labels="Spot Exchange rate:           ",action=my.redraw,initval=1.5)
+  rp.textentry(panel=my.panel,variable=nperiods,labels="Number of Periods:            ",action=my.redraw,initval=3)
   rp.radiogroup(panel = my.panel, variable= settlement,
                 vals = c("quarterly", "semi-annual", "annual"),
                 action = my.redraw, title = "Settlement frequency")

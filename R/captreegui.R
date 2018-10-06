@@ -182,13 +182,13 @@ function(){
     
     my.panel <- rp.control(title = "Cap Tree")
     
-    rp.textentry(panel=my.panel,variable=FV,action=my.redraw,title="Face value       ",initval=100)
-    rp.textentry(panel=my.panel,variable=strike,action=my.redraw,title="strike               ",initval=2.0)
-    rp.textentry(panel=my.panel,variable=r0,action=my.redraw,title="Rate (initial)    ",initval=6.0)
-    rp.textentry(panel=my.panel,variable=u,action=my.redraw,title="up per step     ",initval=1.25)
-    rp.textentry(panel=my.panel,variable=d,action=my.redraw,title="down per step",initval=0.9)
-    rp.textentry(panel=my.panel,variable=q,action=my.redraw,title="q per step       ",initval=0.5)
-    rp.textentry(panel=my.panel,variable=coupon,action=my.redraw,title="Coupon          ",initval=5.0)
+    rp.textentry(panel=my.panel,variable=FV,action=my.redraw,labels="Face value       ",initval=100)
+    rp.textentry(panel=my.panel,variable=strike,action=my.redraw,labels="strike               ",initval=2.0)
+    rp.textentry(panel=my.panel,variable=r0,action=my.redraw,labels="Rate (initial)    ",initval=6.0)
+    rp.textentry(panel=my.panel,variable=u,action=my.redraw,labels="up per step     ",initval=1.25)
+    rp.textentry(panel=my.panel,variable=d,action=my.redraw,labels="down per step",initval=0.9)
+    rp.textentry(panel=my.panel,variable=q,action=my.redraw,labels="q per step       ",initval=0.5)
+    rp.textentry(panel=my.panel,variable=coupon,action=my.redraw,labels="Coupon          ",initval=5.0)
     rp.doublebutton(panel = my.panel, showvalue=TRUE, variable= optmaturity, step = 1, range = c(1, 15),initval=6,
                     title = "Cap Maturity", action = my.redraw)
     rp.radiogroup(panel = my.panel, variable= plot,

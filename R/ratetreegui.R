@@ -107,10 +107,10 @@ function(){
     
     my.panel <- rp.control(title = "Rate Tree")
     
-    rp.textentry(panel=my.panel,variable=r0,action=my.redraw,title="Rate (initial)    ",initval=5.0)
-    rp.textentry(panel=my.panel,variable=u,action=my.redraw,title="up per step     ",initval=1.1)
-    rp.textentry(panel=my.panel,variable=d,action=my.redraw,title="down per step",initval=0.9)
-    rp.textentry(panel=my.panel,variable=q,action=my.redraw,title="q per step       ",initval=0.5)
+    rp.textentry(panel=my.panel,variable=r0,action=my.redraw,labels="Rate (initial)    ",initval=5.0)
+    rp.textentry(panel=my.panel,variable=u,action=my.redraw,labels="up per step     ",initval=1.1)
+    rp.textentry(panel=my.panel,variable=d,action=my.redraw,labels="down per step",initval=0.9)
+    rp.textentry(panel=my.panel,variable=q,action=my.redraw,labels="q per step       ",initval=0.5)
     rp.doublebutton(panel = my.panel, showvalue=TRUE, variable= ratesteps, step = 1, range = c(1, 16),initval=10,
                     title = "Rate tree steps", action = my.redraw)
     rp.tkrplot(panel=my.panel, name=my.tkrplot, plotfun=my.draw, hscale=3, vscale=1.5)

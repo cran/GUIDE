@@ -18,7 +18,7 @@ function(){
   }
   
   my.panel <- rp.control(title = "z-value calculator")
-  rp.textentry(panel=my.panel,variable=pval,title="p value: ",action=my.redraw,initval=0.10)
+  rp.textentry(panel=my.panel,variable=pval,labels="p value: ",action=my.redraw,initval=0.10)
   rp.tkrplot(panel = my.panel, name = my.tkrplot, plotfun = my.draw)
   #rp.do(my.panel, my.draw)
   

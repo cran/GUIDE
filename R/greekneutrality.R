@@ -83,15 +83,15 @@ function(){
   
   
   my.panel <- rp.control("Hedging with Greeks")
-  rp.textentry(my.panel,variable=positions,title="Positions ",initval="-1000, -500, -2000, -500",action=my.redraw)
-  rp.textentry(my.panel,variable=deltas,title="Deltas      ",initval="0.5, 0.8, -0.4, 0.7",action=my.redraw)
-  rp.textentry(my.panel,variable=gammas,title="Gammas ",initval="2.2, 0.6, 1.3, 1.8",action=my.redraw)
-  rp.textentry(my.panel,variable=vegas,title="Vegas       ",initval="1.8, 0.2, 0.7, 1.4",action=my.redraw)
+  rp.textentry(my.panel,variable=positions,labels="Positions ",initval="-1000, -500, -2000, -500",action=my.redraw)
+  rp.textentry(my.panel,variable=deltas,labels="Deltas      ",initval="0.5, 0.8, -0.4, 0.7",action=my.redraw)
+  rp.textentry(my.panel,variable=gammas,labels="Gammas ",initval="2.2, 0.6, 1.3, 1.8",action=my.redraw)
+  rp.textentry(my.panel,variable=vegas,labels="Vegas       ",initval="1.8, 0.2, 0.7, 1.4",action=my.redraw)
   #rp.doublebutton(my.panel,variable=discrate,step=0.25,title="Discount Rate (%  p.a.)",initval=10,range=c(1,15),showvalue=TRUE,action=my.redraw)
   rp.radiogroup(panel=my.panel,variable=neutrality, title="Type of Neutrality desired", 
                 vals=c("Delta", "Delta and Gamma","Delta and Vega", "Delta, Gamma, and Vega"),action=my.redraw)
-  rp.textentry(my.panel,variable=option1,title="Delta, Gamma, Vega of traded option 1 ",initval="0.6, 1.5, 0.8",action=my.redraw)
-  rp.textentry(my.panel,variable=option2,title="Delta, Gamma, Vega of traded option 2 ",initval="0.1, 0.5, 0.6",action=my.redraw)
+  rp.textentry(my.panel,variable=option1,labels="Delta, Gamma, Vega of traded option 1 ",initval="0.6, 1.5, 0.8",action=my.redraw)
+  rp.textentry(my.panel,variable=option2,labels="Delta, Gamma, Vega of traded option 2 ",initval="0.1, 0.5, 0.6",action=my.redraw)
   rp.tkrplot(panel=my.panel , name=tkrp, plotfun=my.draw,hscale=2,vscale=1.5)
   
   #rp.do(my.panel, my.draw)

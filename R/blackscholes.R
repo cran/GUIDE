@@ -37,13 +37,13 @@ function(){
     panel
   }
   
-  my.panel <- rp.control(title = "Black Scholes price")
-  rp.textentry(panel=my.panel,variable=S,title="Spot:            ",action=my.redraw,initval=100)
-  rp.textentry(panel=my.panel,variable=K,title="Strike:          ",action=my.redraw,initval=110)
-  rp.textentry(panel=my.panel,variable=r,title="Risk free:     ",action=my.redraw,initval=0.05)
-  rp.textentry(panel=my.panel,variable=t,title="Maturity:     ",action=my.redraw,initval=0.5)
-  rp.textentry(panel=my.panel,variable=sigma,title="Sigma:         ",action=my.redraw,initval=0.30)
-  rp.textentry(panel=my.panel,variable=div,title="Div yield:     ",action=my.redraw,initval=0.0)
+  my.panel <- rp.control(labels = "Black Scholes price")
+  rp.textentry(panel=my.panel,variable=S,labels="Spot:            ",action=my.redraw,initval=100)
+  rp.textentry(panel=my.panel,variable=K,labels="Strike:          ",action=my.redraw,initval=110)
+  rp.textentry(panel=my.panel,variable=r,labels="Risk free:     ",action=my.redraw,initval=0.05)
+  rp.textentry(panel=my.panel,variable=t,labels="Maturity:     ",action=my.redraw,initval=0.5)
+  rp.textentry(panel=my.panel,variable=sigma,labels="Sigma:         ",action=my.redraw,initval=0.30)
+  rp.textentry(panel=my.panel,variable=div,labels="Div yield:     ",action=my.redraw,initval=0.0)
   rp.radiogroup(panel = my.panel, variable= opttype, vals = c("Call", "Put"), 
                 action = my.redraw, title = "Type of Option",initval="Call")
   #   rp.button(panel=my.panel,title="calculate", action=my.redraw)

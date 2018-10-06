@@ -195,15 +195,15 @@ function(){
     rp.radiogroup(panel = my.panel, variable= exercisetype,
                   vals = c("European", "American"), 
                   action = my.redraw, title = "Exercise style")
-    rp.textentry(panel=my.panel,variable=s0,action=my.redraw,title="Stock price    ",initval=100)
-    rp.textentry(panel=my.panel,variable=strike,action=my.redraw,title="Strike price     ",initval=110)
-    #rp.textentry(panel=my.panel,variable=Time,action=my.draw,title="Time           ",initval=0.25)
-    #rp.textentry(panel=my.panel,variable=sigma,action=my.draw,title="Volatility      ",initval=0.25)
-    rp.textentry(panel=my.panel,variable=Rate,action=my.redraw,title="Rate per step  ",initval=4)
-    rp.textentry(panel=my.panel,variable=u,action=my.redraw,title="up per step    ",initval=1.1)
-    rp.textentry(panel=my.panel,variable=d,action=my.redraw,title="down per step",initval=0.9)
-    rp.textentry(panel=my.panel,variable=q,action=my.redraw,title="q per step      ",initval=0.5)
-    #rp.textentry(panel=my.panel,variable=Div,action=my.draw,title="Dividend rate ",initval=0)
+    rp.textentry(panel=my.panel,variable=s0,action=my.redraw,labels="Stock price    ",initval=100)
+    rp.textentry(panel=my.panel,variable=strike,action=my.redraw,labels="Strike price     ",initval=110)
+    #rp.textentry(panel=my.panel,variable=Time,action=my.draw,labels="Time           ",initval=0.25)
+    #rp.textentry(panel=my.panel,variable=sigma,action=my.draw,labels="Volatility      ",initval=0.25)
+    rp.textentry(panel=my.panel,variable=Rate,action=my.redraw,labels="Rate per step  ",initval=4)
+    rp.textentry(panel=my.panel,variable=u,action=my.redraw,labels="up per step    ",initval=1.1)
+    rp.textentry(panel=my.panel,variable=d,action=my.redraw,labels="down per step",initval=0.9)
+    rp.textentry(panel=my.panel,variable=q,action=my.redraw,labels="q per step      ",initval=0.5)
+    #rp.textentry(panel=my.panel,variable=Div,action=my.draw,labels="Dividend rate ",initval=0)
     rp.doublebutton(panel = my.panel, showvalue=TRUE, variable= nsteps, step = 1, range = c(1, 15),initval=3,
                     title = "No. of Steps", action = my.redraw)
     rp.radiogroup(panel = my.panel, variable= plot,

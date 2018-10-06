@@ -32,12 +32,12 @@ function(){
   }
   
   my.panel <- rp.control(title = "Commodity Futures")
-  rp.textentry(panel=my.panel,variable=S,title="Spot:                           ",action=my.redraw,initval=100)
-  rp.textentry(panel=my.panel,variable=r,title="Risk free:                    ",action=my.redraw,initval=0.05)
-  rp.textentry(panel=my.panel,variable=t,title="Maturity:                    ",action=my.redraw,initval=0.5)
-  rp.textentry(panel=my.panel,variable=convenience,title="Convenience yield:    ",action=my.redraw,initval=0)
-  rp.textentry(panel=my.panel,variable=storage,title="Storage Cost(s):          ",action=my.redraw,initval=0)
-  rp.textentry(panel=my.panel,variable=storagetime,title="Storage Cost Time(s):",action=my.redraw,initval=0)
+  rp.textentry(panel=my.panel,variable=S,labels="Spot:                           ",action=my.redraw,initval=100)
+  rp.textentry(panel=my.panel,variable=r,labels="Risk free:                    ",action=my.redraw,initval=0.05)
+  rp.textentry(panel=my.panel,variable=t,labels="Maturity:                    ",action=my.redraw,initval=0.5)
+  rp.textentry(panel=my.panel,variable=convenience,labels="Convenience yield:    ",action=my.redraw,initval=0)
+  rp.textentry(panel=my.panel,variable=storage,labels="Storage Cost(s):          ",action=my.redraw,initval=0)
+  rp.textentry(panel=my.panel,variable=storagetime,labels="Storage Cost Time(s):",action=my.redraw,initval=0)
   rp.radiogroup(panel = my.panel, variable= storagetype, vals = c("Yield","Cash"),
                 initval="Yield",action = my.redraw, title = "Type of Storage Cost")
   rp.tkrplot(panel = my.panel, name = my.tkrplot, plotfun = my.draw)

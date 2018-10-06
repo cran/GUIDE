@@ -20,7 +20,7 @@ function(){
   }
   
   my.panel <- rp.control(title = "Eurodollar futures contract value")
-  rp.textentry(panel=my.panel,variable=quote,title="CME Quote:",action=my.redraw,initval=97.8)
+  rp.textentry(panel=my.panel,variable=quote,labels="CME Quote:",action=my.redraw,initval=97.8)
   rp.tkrplot(panel = my.panel, pos="bottom",name = my.tkrplot, plotfun = my.draw)
   #rp.do(my.panel, my.draw)
   

@@ -1,4 +1,5 @@
 ### R code from vignette source 'A_guide_to_GUIDE.Rnw'
+### Encoding: ISO8859-1
 
 ###################################################
 ### code chunk number 1: install (eval = FALSE)

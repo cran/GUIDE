@@ -10,7 +10,7 @@ Function to bring up the menu for option trading strategies.
 trading.menu()
 }
 \details{
-Brings up a menu of option trading strategies to chhoose from. Strategies include:\cr
+Brings up a menu of option trading strategies to choose from. Strategies include:\cr
 Bull spread\cr
 Bear spread\cr
 Butterfly\cr
@@ -30,7 +30,7 @@ A menu of various Option trading strategies.
 }
 
 \references{
-John C. Hull, "Options, Futures, and Other Derivatives", 8/E, Prentice Hall, 2012. 
+John C. Hull, "Options, Futures, and Other Derivatives", 8/E, Prentice Hall, 2012.
 }
 \author{
 S Subramanian <ssubramanian@sssihl.edu.in>

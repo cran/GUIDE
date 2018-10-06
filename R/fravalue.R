@@ -23,11 +23,11 @@ function(){
   }
   
   my.panel <- rp.control(title = "Value of FRA")
-  rp.textentry(panel=my.panel,variable=Notional,title="Notional:  ",action=my.redraw,initval=100000)
-  rp.textentry(panel=my.panel,variable=f12,title="Fwd Rate:  ",action=my.redraw,initval=0.09)
-  rp.textentry(panel=my.panel,variable=fixed,title="Fixed Rate:",action=my.redraw,initval=0.10)
-  rp.textentry(panel=my.panel,variable=t1,title="Months1:    ",action=my.redraw,initval=3)
-  rp.textentry(panel=my.panel,variable=t2,title="Months2:    ",action=my.redraw,initval=6)
+  rp.textentry(panel=my.panel,variable=Notional,labels="Notional:  ",action=my.redraw,initval=100000)
+  rp.textentry(panel=my.panel,variable=f12,labels="Fwd Rate:  ",action=my.redraw,initval=0.09)
+  rp.textentry(panel=my.panel,variable=fixed,labels="Fixed Rate:",action=my.redraw,initval=0.10)
+  rp.textentry(panel=my.panel,variable=t1,labels="Months1:    ",action=my.redraw,initval=3)
+  rp.textentry(panel=my.panel,variable=t2,labels="Months2:    ",action=my.redraw,initval=6)
   rp.tkrplot(panel = my.panel, pos="bottom",name = my.tkrplot, plotfun = my.draw)
   #rp.do(my.panel, my.draw)
   

@@ -63,11 +63,11 @@ function(){
   }
   
   my.panel <- rp.control(title = "Value of Interest Rate Swap")
-  rp.textentry(panel=my.panel,variable=Notional,title="Notional:                           ",action=my.redraw,initval=1000000)
-  rp.textentry(panel=my.panel,variable=fixed,title="Fixed Rate:                         ",action=my.redraw,initval=0.06)
-  rp.textentry(panel=my.panel,variable=float0,title="Last spot rate:                   ",action=my.redraw,initval=0.05)
-  rp.textentry(panel=my.panel,variable=start,title="Months for 1st payment:",action=my.redraw,initval=3)
-  rp.textentry(panel=my.panel,variable=SpotRate,title="Spot Rates:                        ",action=my.redraw,initval="0.054, 0.056, 0.058")
+  rp.textentry(panel=my.panel,variable=Notional,labels="Notional:                           ",action=my.redraw,initval=1000000)
+  rp.textentry(panel=my.panel,variable=fixed,labels="Fixed Rate:                         ",action=my.redraw,initval=0.06)
+  rp.textentry(panel=my.panel,variable=float0,labels="Last spot rate:                   ",action=my.redraw,initval=0.05)
+  rp.textentry(panel=my.panel,variable=start,labels="Months for 1st payment:",action=my.redraw,initval=3)
+  rp.textentry(panel=my.panel,variable=SpotRate,labels="Spot Rates:                        ",action=my.redraw,initval="0.054, 0.056, 0.058")
   rp.radiogroup(panel = my.panel, variable= spotfreq,
                 vals = c("continuous", "quarterly", "semi-annual", "annual"),
                 action = my.redraw, title = "Frequency of spot rates")

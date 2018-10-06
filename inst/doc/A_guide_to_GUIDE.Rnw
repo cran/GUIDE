@@ -9,8 +9,8 @@
 
 
 \author{S Subramanian\\
-Dept. of Management Studies\\ Sri Sathya Sai Institute of Higher Learning\\ Prasanthi Nilayam, A.P. INDIA. 515134.\\
-Email: ssubramanian@sssihl.edu.in\\} 
+Dept. of Management and Commerce\\ Sri Sathya Sai Institute of Higher Learning\\ Prasanthi Nilayam, A.P. INDIA. 515134.\\
+Email: ssubramanian@sssihl.edu.in\\}
 \title{A guide to GUIDE}
 
 
@@ -21,7 +21,7 @@ This paper is a guide to the R package GUIDE, short for GUI for DErivatives.The 
 \end{abstract}
 
 \section{Introduction}
-GUIDE is an acronym for for GUI for DErivatives. The package provides neat UIs like calculators for pricing various financial derivatives as well as rich interactive 2D and 3D plots to understand their behavior. It is a useful resource for classroom teaching as well as computer assisted self-learning. 
+GUIDE is an acronym for for GUI for DErivatives. The package provides neat UIs like calculators for pricing various financial derivatives as well as rich interactive 2D and 3D plots to understand their behavior. It is a useful resource for classroom teaching as well as computer assisted self-learning.
 
 \section{Installation}
  Installation is easy and can be done by calling the command line function
@@ -29,18 +29,18 @@ GUIDE is an acronym for for GUI for DErivatives. The package provides neat UIs l
 install.packages("GUIDE")
 @
 
-Alternatively, one can also install it from the R console package installation menu. To start using the package, enter 
+Alternatively, one can also install it from the R console package installation menu. To start using the package, enter
 <<load, eval=FALSE>>=
 library("GUIDE")
 @
 You can also load the package from the console menu.
 
-To start using the package, enter 
+To start using the package, enter
 <<start, eval=FALSE>>=
 GUIDE()
 @
 
-You should then see the main menu of the package as in Figure \ref{Fig:mainmenu}. 
+You should then see the main menu of the package as in Figure \ref{Fig:mainmenu}.
 
 \section{Menus}
 GUIDE has 64 functions. A complete list of functions (in menu-wise order) along with a short description is provided in Table \ref{Tab:fns}
@@ -64,7 +64,7 @@ Name of Function & Description  \\
 \hline\\
 %\caption{List of Functions in GUIDE}
 \endlastfoot
-\multicolumn{2}{ c }{Forwards} \\                   
+\multicolumn{2}{ c }{Forwards} \\
 forwardcommodity & Calculate the forward value of a commodity \\
 forwardcurrency & Calculate the forward value of a currency\\
 forwardstock & Calculate the forward value of a stock\\
@@ -72,7 +72,7 @@ bondforwardtreegui & Calculate the forward value of a bond using a tree\\
 fra & Calculate the forward rate\\
 fravalue & Calculate the value of a forward rate agreement\\
 \\
-\multicolumn{2}{ c }{Futures} \\      
+\multicolumn{2}{ c }{Futures} \\
 futurescommodity & Calculate the value of a commodity futures\\
 futurescurrency & Calculate the value of a currency futures\\
 futuresstock & Calculate the value of a stock futures\\
@@ -135,7 +135,7 @@ bondchange & Calculate the DV01 based on the duration and convexity\\
 \\
 \multicolumn{2}{ c }{Utilities} \\
 pv & Calculate the Present value of an amount\\
-fv & Calculate the Future value of an amount\\ 
+fv & Calculate the Future value of an amount\\
 pvann & Calculate the Present value of an annuity\\
 fvann & Calculate the Future value of an annuity\\
 rate & Calculate rate in the desired frequency\\
@@ -147,19 +147,19 @@ zval & Calculate the z value for a p value from a normal distribution\\
 \end{center}
 
 
-Each of the functions can be accessed from sub menus of the main menu. Sub menu of the Options menu is shown in Figure \ref{Fig:opmenu}. You can fully explore all the functions through the package's GUI and do not need to write any command on the R console. Figures \ref{Fig:calcbs} and \ref{Fig:calcbond} show calculators for the Black Scholes price of Options, and the price of Bonds respectively. Each function depicts initial values where user inputs are needed, thereby making it easier for the user to enter inputs in the correct format. For e.g. in Figure \ref{Fig:calcbs} (b), the Black Scholes pricer takes the following inputs: i) the spot price ii) the strike price iii) the risk free rate iv) maturity, v) sigma, vii) dividend yield- all of which are text boxes and viii)  Type of option, which is a radio button. The documentation provides details of the format for each of the user inputs for each function. Figure \ref{Fig:tkrplotpriceyld} shows the relationship between price and yield. Figure \ref{Fig:nativeplotdelta} shows the behavior of option delta. 
+Each of the functions can be accessed from sub menus of the main menu. Sub menu of the Options menu is shown in Figure \ref{Fig:opmenu}. You can fully explore all the functions through the package's GUI and do not need to write any command on the R console. Figures \ref{Fig:calcbs} and \ref{Fig:calcbond} show calculators for the Black Scholes price of Options, and the price of Bonds respectively. Each function depicts initial values where user inputs are needed, thereby making it easier for the user to enter inputs in the correct format. For e.g. in Figure \ref{Fig:calcbs} (b), the Black Scholes pricer takes the following inputs: i) the spot price ii) the strike price iii) the risk free rate iv) maturity, v) sigma, vii) dividend yield- all of which are text boxes and viii)  Type of option, which is a radio button. The documentation provides details of the format for each of the user inputs for each function. Figure \ref{Fig:tkrplotpriceyld} shows the relationship between price and yield. Figure \ref{Fig:nativeplotdelta} shows the behavior of option delta.
 
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth]{guidemain.jpg}
-\caption{The Main menu of GUIDE.} 
+\caption{The Main menu of GUIDE.}
 \label{Fig:mainmenu}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth]{op-menu.jpg}
-\caption{The sub-menu of Options.} 
+\caption{The sub-menu of Options.}
 \label{Fig:opmenu}
 \end{figure}
 

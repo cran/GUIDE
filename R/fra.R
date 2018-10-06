@@ -38,10 +38,10 @@ function(){
   }
   
   my.panel <- rp.control(title = "Forward Rate")
-  rp.textentry(panel=my.panel,variable=t1,title="Months1:",action=my.redraw,initval=3)
-  rp.textentry(panel=my.panel,variable=r1,title="Rate1:      ",action=my.redraw,initval=0.09)
-  rp.textentry(panel=my.panel,variable=t2,title="Months2:",action=my.redraw,initval=6)
-  rp.textentry(panel=my.panel,variable=r2,title="Rate2:      ",action=my.redraw,initval=0.12)
+  rp.textentry(panel=my.panel,variable=t1,labels="Months1:",action=my.redraw,initval=3)
+  rp.textentry(panel=my.panel,variable=r1,labels="Rate1:      ",action=my.redraw,initval=0.09)
+  rp.textentry(panel=my.panel,variable=t2,labels="Months2:",action=my.redraw,initval=6)
+  rp.textentry(panel=my.panel,variable=r2,labels="Rate2:      ",action=my.redraw,initval=0.12)
   rp.radiogroup(panel = my.panel, variable= frequency,
                 vals = c("Continuous", "Loan period"),
                 action = my.redraw, title = "Frequency of spot rates")
